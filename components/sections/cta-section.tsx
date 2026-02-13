@@ -31,13 +31,13 @@ const ctas = [
 
 export function CTASection() {
   return (
-    <section className="bg-blue-700 py-20">
+    <section className="bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-500 py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="mb-3 text-3xl font-bold text-white">
+          <h2 className="mb-3 text-3xl font-bold text-amber-950">
             Be Part of the Change
           </h2>
-          <p className="text-lg text-blue-200">
+          <p className="text-lg text-amber-900/80">
             Every contribution moves Middletown closer to its vision.
           </p>
         </div>
@@ -48,21 +48,21 @@ export function CTASection() {
             return (
               <div
                 key={cta.title}
-                className="rounded-xl bg-white/10 p-8 text-center backdrop-blur-sm transition-colors hover:bg-white/15"
+                className="rounded-xl bg-amber-950/10 p-8 text-center backdrop-blur-sm transition-colors hover:bg-amber-950/15"
               >
-                <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-full bg-white/10">
-                  <Icon className="size-7 text-white" />
+                <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-full bg-amber-950/10">
+                  <Icon className="size-7 text-amber-950" />
                 </div>
-                <h3 className="mb-2 text-xl font-semibold text-white">
+                <h3 className="mb-2 text-xl font-semibold text-amber-950">
                   {cta.title}
                 </h3>
-                <p className="mb-6 text-sm leading-relaxed text-blue-200">
+                <p className="mb-6 text-sm leading-relaxed text-amber-900/70">
                   {cta.description}
                 </p>
                 <Button
                   asChild
                   variant="outline"
-                  className="border-white/30 bg-transparent text-white hover:bg-white hover:text-blue-700"
+                  className="border-amber-950/30 bg-amber-950 text-amber-100 hover:bg-amber-900"
                 >
                   <Link href={cta.href}>{cta.buttonText}</Link>
                 </Button>

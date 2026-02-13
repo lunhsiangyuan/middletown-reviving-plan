@@ -34,13 +34,13 @@ export function Timeline({ events, title = "Timeline" }: TimelineProps) {
   return (
     <section className="py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <h2 className="mb-12 text-center text-3xl font-bold text-slate-900">
+        <h2 className="mb-12 text-center text-3xl font-bold text-slate-900" style={{ fontFamily: 'var(--font-noto-serif-tc)' }}>
           {title}
         </h2>
 
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-4 top-0 h-full w-0.5 bg-slate-200 md:left-1/2 md:-translate-x-px" />
+          <div className="absolute left-4 top-0 h-full w-0.5 bg-gradient-to-b from-amber-300 via-violet-300 to-amber-300 md:left-1/2 md:-translate-x-px" />
 
           <div className="flex flex-col gap-8">
             {events.map((event, index) => {
@@ -55,7 +55,7 @@ export function Timeline({ events, title = "Timeline" }: TimelineProps) {
                 >
                   {/* Mobile: dot on the left */}
                   <div className="relative z-10 md:hidden">
-                    <div className={`size-3 rounded-full ring-4 ring-white ${dotColor}`} />
+                    <div className={`size-3 rounded-full ring-4 ring-amber-100 ${dotColor}`} />
                   </div>
 
                   {/* Desktop: alternating layout */}
@@ -64,7 +64,7 @@ export function Timeline({ events, title = "Timeline" }: TimelineProps) {
                     <div className={`w-1/2 px-8 ${isLeft ? "text-right" : ""}`}>
                       {isLeft && (
                         <div>
-                          <span className="text-sm font-bold text-blue-700">
+                          <span className="text-sm font-bold text-amber-600">
                             {event.year}
                           </span>
                           <h3 className="mt-1 text-lg font-semibold text-slate-900">
@@ -84,14 +84,14 @@ export function Timeline({ events, title = "Timeline" }: TimelineProps) {
 
                     {/* Center dot */}
                     <div className="relative z-10 flex shrink-0 items-center justify-center">
-                      <div className={`size-4 rounded-full ring-4 ring-white ${dotColor}`} />
+                      <div className={`size-4 rounded-full ring-4 ring-amber-100 ${dotColor}`} />
                     </div>
 
                     {/* Right content */}
                     <div className={`w-1/2 px-8 ${!isLeft ? "text-left" : ""}`}>
                       {!isLeft && (
                         <div>
-                          <span className="text-sm font-bold text-blue-700">
+                          <span className="text-sm font-bold text-amber-600">
                             {event.year}
                           </span>
                           <h3 className="mt-1 text-lg font-semibold text-slate-900">
@@ -112,7 +112,7 @@ export function Timeline({ events, title = "Timeline" }: TimelineProps) {
 
                   {/* Mobile content */}
                   <div className="md:hidden">
-                    <span className="text-sm font-bold text-blue-700">
+                    <span className="text-sm font-bold text-amber-600">
                       {event.year}
                     </span>
                     <h3 className="mt-1 text-lg font-semibold text-slate-900">

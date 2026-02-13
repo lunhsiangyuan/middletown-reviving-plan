@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MapPin, Menu } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -46,14 +46,25 @@ const languages = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
+    <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+      isScrolled
+        ? "border-b bg-white/95 backdrop-blur-md shadow-sm"
+        : "bg-transparent border-transparent"
+    }`}>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <MapPin className="size-6 text-blue-700" />
-          <span className="text-lg font-bold text-slate-900">
+          <MapPin className={`size-6 ${isScrolled ? "text-amber-600" : "text-amber-400"}`} />
+          <span className={`text-lg font-bold ${isScrolled ? "text-slate-900" : "text-white"}`}>
             Middletown Reviving Plan
           </span>
         </Link>
@@ -64,7 +75,7 @@ export function Header() {
             <NavigationMenuList>
               {/* Topics Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-slate-700">
+                <NavigationMenuTrigger className={isScrolled ? "text-slate-700" : "text-white/90 hover:text-white"}>
                   Topics
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -74,7 +85,7 @@ export function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             href={topic.href}
-                            className="block select-none rounded-md p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-blue-50 hover:text-blue-700"
+                            className="block select-none rounded-md p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-amber-50 hover:text-amber-700"
                           >
                             {topic.title}
                           </Link>
@@ -87,7 +98,7 @@ export function Header() {
 
               {/* For Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-slate-700">
+                <NavigationMenuTrigger className={isScrolled ? "text-slate-700" : "text-white/90 hover:text-white"}>
                   For
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -97,7 +108,7 @@ export function Header() {
                         <NavigationMenuLink asChild>
                           <Link
                             href={audience.href}
-                            className="block select-none rounded-md p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-emerald-50 hover:text-emerald-700"
+                            className="block select-none rounded-md p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-violet-50 hover:text-violet-700"
                           >
                             {audience.title}
                           </Link>
@@ -128,7 +139,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className={isScrolled ? "" : "text-white"}>
                 <Menu className="size-5" />
                 <span className="sr-only">Open menu</span>
               </Button>
@@ -136,7 +147,7 @@ export function Header() {
             <SheetContent side="right">
               <SheetHeader>
                 <SheetTitle className="flex items-center gap-2">
-                  <MapPin className="size-5 text-blue-700" />
+                  <MapPin className="size-5 text-amber-600" />
                   Middletown Reviving Plan
                 </SheetTitle>
               </SheetHeader>
@@ -152,7 +163,7 @@ export function Header() {
                         key={topic.href}
                         href={topic.href}
                         onClick={() => setOpen(false)}
-                        className="rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-700"
+                        className="rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-700"
                       >
                         {topic.title}
                       </Link>
@@ -171,7 +182,7 @@ export function Header() {
                         key={audience.href}
                         href={audience.href}
                         onClick={() => setOpen(false)}
-                        className="rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700"
+                        className="rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-violet-50 hover:text-violet-700"
                       >
                         {audience.title}
                       </Link>

@@ -29,11 +29,11 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-blue-700 to-blue-900 py-16">
+    <section className="relative overflow-hidden bg-gradient-to-r from-violet-900 to-indigo-950 py-16">
       {/* Subtle Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute -top-24 -right-24 size-96 rounded-full bg-white blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 size-96 rounded-full bg-emerald-400 blur-3xl" />
+        <div className="absolute -top-24 -right-24 size-96 rounded-full bg-amber-400 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 size-96 rounded-full bg-violet-400 blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -45,16 +45,16 @@ export function StatsSection() {
                 key={stat.label}
                 className="group cursor-default rounded-2xl p-6 text-center transition-all duration-200 hover:scale-105 hover:bg-white/5"
               >
-                <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-white/20">
-                  <Icon className="size-6 text-blue-200" />
+                <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-full bg-amber-500/20 transition-colors group-hover:bg-amber-500/30">
+                  <Icon className="size-6 text-amber-300" />
                 </div>
-                <p className="text-3xl font-bold text-white sm:text-4xl">
+                <p className="text-3xl font-bold text-amber-300 sm:text-4xl">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-sm font-medium text-blue-200">
+                <p className="mt-1 text-sm font-medium text-violet-200">
                   {stat.label}
                 </p>
-                <p className="mt-0.5 text-xs text-blue-300/70">
+                <p className="mt-0.5 text-xs text-violet-300/70">
                   {stat.description}
                 </p>
               </div>

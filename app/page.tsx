@@ -38,7 +38,7 @@ const topics = [
     href: "/campus",
     color: "text-blue-600",
     bgColor: "bg-blue-50",
-    hoverBorder: "hover:border-blue-300",
+    hoverBorder: "hover:border-indigo-300",
   },
   {
     title: "Healthcare",
@@ -68,7 +68,7 @@ const topics = [
     href: "/revitalization",
     color: "text-amber-600",
     bgColor: "bg-amber-50",
-    hoverBorder: "hover:border-amber-300",
+    hoverBorder: "hover:border-amber-400",
   },
   {
     title: "Business & Lifestyle",
@@ -108,17 +108,27 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
+      {/* Decorative divider */}
+      <div className="section-divider">
+        <span className="text-amber-400">◆</span>
+      </div>
+
       {/* Audience Selector */}
       <AudienceSelector />
+
+      {/* Decorative divider */}
+      <div className="section-divider">
+        <span className="text-amber-400">◆</span>
+      </div>
 
       {/* Topic Navigation Grid */}
       <section id="explore" className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <p className="mb-2 text-sm font-medium uppercase tracking-widest text-blue-600">
+            <p className="mb-2 text-sm font-medium uppercase tracking-widest text-amber-600">
               Where Technology Meets Humanity
             </p>
-            <h2 className="mb-3 text-3xl font-bold text-slate-900">
+            <h2 className="mb-3 text-3xl font-bold text-slate-900" style={{ fontFamily: 'var(--font-noto-serif-tc)' }}>
               Explore the Plan
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-slate-600">
@@ -165,6 +175,11 @@ export default function Home() {
         events={timelineEvents}
         title="Revitalization Timeline"
       />
+
+      {/* Decorative divider */}
+      <div className="section-divider">
+        <span className="text-amber-400">◆</span>
+      </div>
 
       {/* CTA Section */}
       <CTASection />

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_TC } from "next/font/google";
+import { Inter, Noto_Sans_TC, Noto_Serif_TC } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { LanguageProvider } from "@/lib/i18n/language-context";
@@ -18,6 +18,13 @@ const notoSansTC = Noto_Sans_TC({
   display: "swap",
 });
 
+const notoSerifTC = Noto_Serif_TC({
+  variable: "--font-noto-serif-tc",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Middletown Reviving Plan | 當科技遇上人性",
   description:
@@ -32,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="zh-TW">
       <body
-        className={`${inter.variable} ${notoSansTC.variable} font-sans antialiased`}
+        className={`${inter.variable} ${notoSansTC.variable} ${notoSerifTC.variable} font-sans antialiased`}
       >
         <LanguageProvider>
           <Header />

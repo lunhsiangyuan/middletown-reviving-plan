@@ -34,17 +34,17 @@ const audiences = [
     description: "Economic opportunities and development ROI projections.",
     icon: TrendingUp,
     href: "/for/investment",
-    color: "text-emerald-600",
-    hoverBg: "hover:border-emerald-400 hover:bg-emerald-50",
+    color: "text-amber-600",
+    hoverBg: "hover:border-amber-400 hover:bg-amber-50",
   },
 ];
 
 export function AudienceSelector() {
   return (
-    <section className="bg-slate-50 py-20">
+    <section className="bg-amber-50/50 py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="mb-3 text-3xl font-bold text-slate-900">
+          <h2 className="mb-3 text-3xl font-bold text-slate-900" style={{ fontFamily: 'var(--font-noto-serif-tc)' }}>
             I am a...
           </h2>
           <p className="text-lg text-slate-600">
@@ -58,7 +58,7 @@ export function AudienceSelector() {
             return (
               <Link key={audience.href} href={audience.href} className="min-h-[44px]">
                 <Card
-                  className={`cursor-pointer border-2 border-transparent transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${audience.hoverBg}`}
+                  className={`cursor-pointer border-2 border-transparent transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-100/50 ${audience.hoverBg}`}
                 >
                   <CardHeader className="items-center text-center">
                     <div className={`mb-2 rounded-xl bg-white p-3 shadow-sm transition-transform duration-200 group-hover:scale-110 ${audience.color}`}>

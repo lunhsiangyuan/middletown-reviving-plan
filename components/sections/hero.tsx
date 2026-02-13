@@ -43,23 +43,26 @@ export function Hero() {
   const s = slogans[language] || slogans["zh-TW"];
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-950 via-violet-900 to-indigo-900">
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/60 via-transparent to-slate-900/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo-950/60 via-transparent to-indigo-950/80" />
 
       {/* Decorative Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 left-1/4 size-96 rounded-full bg-blue-500 blur-3xl" />
-        <div className="absolute right-1/4 bottom-1/4 size-96 rounded-full bg-emerald-500 blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 size-96 rounded-full bg-amber-500/30 blur-3xl" />
+        <div className="absolute right-1/4 bottom-1/4 size-96 rounded-full bg-violet-600/30 blur-3xl" />
       </div>
 
+      {/* Gold glow arc */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-amber-500/5 blur-3xl" />
+
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-300">
+        <p className="mb-4 text-sm font-medium uppercase tracking-widest text-amber-400 border border-amber-500/30 rounded-full px-4 py-1 inline-block">
           {s.eyebrow}
         </p>
         <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-          {s.title}{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+          <span className="italic" style={{ fontFamily: 'var(--font-noto-serif-tc)' }}>{s.title}</span>{" "}
+          <span className="bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
             {s.highlight}
           </span>
         </h1>
@@ -69,10 +72,10 @@ export function Hero() {
           <p className="text-xl font-light tracking-wide text-white/90 sm:text-2xl">
             {s.line1}
           </p>
-          <p className="text-lg text-slate-300 sm:text-xl">
+          <p className="text-lg text-violet-200 sm:text-xl">
             {s.line2}
           </p>
-          <p className="text-lg font-medium text-emerald-300 sm:text-xl">
+          <p className="text-lg font-medium text-amber-300 sm:text-xl">
             {s.line3}
           </p>
         </div>
@@ -81,7 +84,7 @@ export function Hero() {
           <Button
             asChild
             size="lg"
-            className="bg-blue-600 px-8 text-white hover:bg-blue-700"
+            className="bg-amber-500 px-8 text-indigo-950 hover:bg-amber-400 font-semibold"
           >
             <Link href="#explore">{s.cta1}</Link>
           </Button>
@@ -89,7 +92,7 @@ export function Hero() {
             asChild
             variant="outline"
             size="lg"
-            className="border-slate-500 bg-transparent text-white hover:bg-white/10"
+            className="border-amber-400/50 bg-transparent text-amber-100 hover:bg-amber-500/10"
           >
             <Link href="/for/personal">{s.cta2}</Link>
           </Button>
@@ -98,7 +101,7 @@ export function Hero() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ArrowDown className="size-6 text-slate-400" />
+        <ArrowDown className="size-6 text-amber-400/70" />
       </div>
     </section>
   );
