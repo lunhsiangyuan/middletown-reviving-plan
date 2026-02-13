@@ -1,8 +1,47 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
+
+const slogans = {
+  "zh-TW": {
+    eyebrow: "復興願景",
+    title: "Reviving",
+    highlight: "Middletown",
+    line1: "當科技遇上人性",
+    line2: "進步與傳統智慧的融合",
+    line3: "偉大文明與文藝復興的再現",
+    cta1: "探索計畫",
+    cta2: "找到你的角色",
+  },
+  en: {
+    eyebrow: "A Vision for Tomorrow",
+    title: "Reviving",
+    highlight: "Middletown",
+    line1: "Where Technology Meets Humanity",
+    line2: "A Fusion of Progress and Ancient Wisdom",
+    line3: "The Renaissance of Great Civilization",
+    cta1: "Explore the Plan",
+    cta2: "Find Your Role",
+  },
+  es: {
+    eyebrow: "Una Visión para el Mañana",
+    title: "Reviviendo",
+    highlight: "Middletown",
+    line1: "Donde la Tecnología Encuentra la Humanidad",
+    line2: "Una Fusión de Progreso y Sabiduría Ancestral",
+    line3: "El Renacimiento de una Gran Civilización",
+    cta1: "Explorar el Plan",
+    cta2: "Encuentra Tu Rol",
+  },
+};
 
 export function Hero() {
+  const { language } = useLanguage();
+  const s = slogans[language] || slogans["zh-TW"];
+
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       {/* Gradient Overlay */}
@@ -16,26 +55,35 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <p className="mb-4 text-sm font-medium uppercase tracking-widest text-blue-300">
-          A Vision for Tomorrow
+          {s.eyebrow}
         </p>
         <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-          Reviving{" "}
+          {s.title}{" "}
           <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-            Middletown
+            {s.highlight}
           </span>
         </h1>
-        <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
-          A comprehensive community initiative to transform Middletown, NY
-          through strategic investments in education, healthcare, and
-          sustainable growth.
-        </p>
+
+        {/* Three-line Slogan */}
+        <div className="mx-auto mb-8 max-w-2xl space-y-2">
+          <p className="text-xl font-light tracking-wide text-white/90 sm:text-2xl">
+            {s.line1}
+          </p>
+          <p className="text-lg text-slate-300 sm:text-xl">
+            {s.line2}
+          </p>
+          <p className="text-lg font-medium text-emerald-300 sm:text-xl">
+            {s.line3}
+          </p>
+        </div>
+
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Button
             asChild
             size="lg"
             className="bg-blue-600 px-8 text-white hover:bg-blue-700"
           >
-            <Link href="#explore">Explore the Plan</Link>
+            <Link href="#explore">{s.cta1}</Link>
           </Button>
           <Button
             asChild
@@ -43,7 +91,7 @@ export function Hero() {
             size="lg"
             className="border-slate-500 bg-transparent text-white hover:bg-white/10"
           >
-            <Link href="/for/personal">Find Your Role</Link>
+            <Link href="/for/personal">{s.cta2}</Link>
           </Button>
         </div>
       </div>

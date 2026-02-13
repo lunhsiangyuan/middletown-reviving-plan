@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Noto_Sans_TC } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { LanguageProvider } from "@/lib/i18n/language-context";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,9 +19,9 @@ const notoSansTC = Noto_Sans_TC({
 });
 
 export const metadata: Metadata = {
-  title: "Middletown Reviving Plan",
+  title: "Middletown Reviving Plan | 當科技遇上人性",
   description:
-    "A comprehensive community initiative to transform Middletown, NY through strategic investments in education, healthcare, infrastructure, and sustainable growth.",
+    "Middletown, NY 社區振興生態系統展示平台。當科技遇上人性，進步與傳統智慧的融合，偉大文明與文藝復興的再現。",
 };
 
 export default function RootLayout({
@@ -29,13 +30,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="zh-TW">
       <body
         className={`${inter.variable} ${notoSansTC.variable} font-sans antialiased`}
       >
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

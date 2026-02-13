@@ -9,6 +9,10 @@ import {
   TreePine,
   DollarSign,
   MapPin,
+  Sun,
+  UtensilsCrossed,
+  Stethoscope,
+  Armchair,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -114,6 +118,83 @@ export default function PersonalPage() {
               </Card>
             );
           })}
+        </div>
+      </section>
+
+      {/* Retirement & Quality Living */}
+      <section className="border-t bg-gradient-to-br from-amber-50 to-orange-50 px-6 py-14 lg:px-12">
+        <h2 className="mb-2 text-2xl font-bold text-slate-900">
+          Ideal for Retirement & Quality Living
+        </h2>
+        <p className="mb-8 text-slate-600">
+          Middletown offers a perfect blend of peaceful living and comprehensive services,
+          making it an ideal destination for retirees and families seeking a high quality of life.
+        </p>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <Card>
+            <CardHeader>
+              <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-amber-100">
+                <Armchair className="size-5 text-amber-700" />
+              </div>
+              <CardTitle className="text-base">Retirement Haven</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-slate-600">
+                Affordable housing ($395K avg vs $700K+ NYC suburbs), low property
+                taxes compared to NJ/CT, walkable downtown, and a tight-knit community.
+                Enjoy a serene, unhurried pace of life just 90 minutes from world-class
+                city amenities.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-green-100">
+                <UtensilsCrossed className="size-5 text-green-700" />
+              </div>
+              <CardTitle className="text-base">Diverse Cuisine</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-slate-600">
+                A thriving food scene with healthy dining options: Taiwan Way (Taiwanese
+                comfort food), Mister Croissant (French artisan bakery), Monte Pastries,
+                Mon Tea (premium teas), Daye&apos;s Coffee (enzyme coffee), Oak &amp; Reed,
+                and Clemson Bros. Brewery. Fresh, diverse, and affordable.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-sky-100">
+                <Sun className="size-5 text-sky-700" />
+              </div>
+              <CardTitle className="text-base">Four-Season Climate</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-slate-600">
+                Enjoy all four seasons in the Hudson Valley: vibrant fall foliage,
+                snowy winters ideal for nearby ski resorts, blooming springs, and warm
+                summers. Average temps range from 25°F (winter) to 82°F (summer).
+                Clean air and scenic natural surroundings year-round.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-rose-100">
+                <Stethoscope className="size-5 text-rose-700" />
+              </div>
+              <CardTitle className="text-base">Comprehensive Healthcare</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-slate-600">
+                Multiple healthcare providers at your doorstep: Northern Medical Center
+                (integrative Western + Chinese medicine, TMS, mental health), Garnet Health
+                Medical Center (full-service hospital), Touro COM (medical training
+                pipeline). Medicare and Medicaid widely accepted.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 

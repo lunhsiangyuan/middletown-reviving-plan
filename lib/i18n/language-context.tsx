@@ -44,7 +44,7 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 function getInitialLanguage(): Language {
   const cookie = getCookie("lang");
   if (cookie === "en" || cookie === "zh-TW" || cookie === "es") return cookie;
-  return "en";
+  return "zh-TW";
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
