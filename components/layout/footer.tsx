@@ -11,12 +11,12 @@ const footerLinks = {
   topics: {
     title: "Topics",
     links: [
-      { label: "Campus", href: "/topics/campus" },
-      { label: "Healthcare", href: "/topics/healthcare" },
-      { label: "Education", href: "/topics/education" },
-      { label: "Revitalization", href: "/topics/revitalization" },
-      { label: "Lifestyle", href: "/topics/lifestyle" },
-      { label: "Transportation", href: "/topics/transportation" },
+      { label: "Campus", href: "/campus" },
+      { label: "Healthcare", href: "/healthcare" },
+      { label: "Education", href: "/education" },
+      { label: "Revitalization", href: "/revitalization" },
+      { label: "Lifestyle", href: "/lifestyle" },
+      { label: "Transportation", href: "/transportation" },
     ],
   },
   stakeholders: {
@@ -33,8 +33,8 @@ const footerLinks = {
     links: [
       { label: "Contact Us", href: "/contact" },
       { label: "Newsletter", href: "/newsletter" },
-      { label: "Twitter / X", href: "#" },
-      { label: "Facebook", href: "#" },
+      { label: "Twitter / X", href: "#twitter" },
+      { label: "Facebook", href: "#facebook" },
     ],
   },
 };
