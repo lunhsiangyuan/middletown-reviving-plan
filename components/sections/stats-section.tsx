@@ -41,8 +41,11 @@ export function StatsSection() {
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
-              <div key={stat.label} className="text-center">
-                <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-full bg-white/10">
+              <div
+                key={stat.label}
+                className="group cursor-default rounded-2xl p-6 text-center transition-all duration-200 hover:scale-105 hover:bg-white/5"
+              >
+                <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-white/20">
                   <Icon className="size-6 text-blue-200" />
                 </div>
                 <p className="text-3xl font-bold text-white sm:text-4xl">

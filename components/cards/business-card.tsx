@@ -23,7 +23,7 @@ export function BusinessCard({
   specialties,
 }: BusinessCardProps) {
   return (
-    <Card className="transition-shadow hover:shadow-md">
+    <Card className="flex h-full cursor-pointer flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
       <CardHeader>
         <div className="flex items-start justify-between">
           <CardTitle className="text-base">{name}</CardTitle>
@@ -31,10 +31,10 @@ export function BusinessCard({
         </div>
         <CardDescription className="text-xs">{address}</CardDescription>
       </CardHeader>
-      <CardContent className="flex flex-col gap-3">
+      <CardContent className="flex flex-1 flex-col gap-3">
         <p className="text-sm text-slate-600">{description}</p>
         {specialties.length > 0 && (
-          <div className="flex flex-wrap gap-1.5">
+          <div className="mt-auto flex flex-wrap gap-1.5">
             {specialties.map((specialty) => (
               <Badge
                 key={specialty}

@@ -18,9 +18,9 @@ interface ProjectCardProps {
 }
 
 const statusStyles: Record<string, string> = {
-  completed: "bg-emerald-100 text-emerald-800",
-  "in-progress": "bg-blue-100 text-blue-800",
-  planned: "bg-slate-100 text-slate-800",
+  completed: "bg-emerald-100 text-emerald-800 border border-emerald-200",
+  "in-progress": "bg-amber-100 text-amber-800 border border-amber-200",
+  planned: "bg-slate-100 text-slate-600 border border-slate-200",
 };
 
 export function ProjectCard({
@@ -31,17 +31,17 @@ export function ProjectCard({
   sourceUrl,
 }: ProjectCardProps) {
   return (
-    <Card className="transition-shadow hover:shadow-md">
+    <Card className="flex h-full cursor-pointer flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
       <CardHeader>
         <div className="flex items-start justify-between gap-2">
           <CardTitle className="text-base">{name}</CardTitle>
           <Badge className={statusStyles[status]}>{status}</Badge>
         </div>
-        <CardDescription className="text-xl font-bold text-blue-700">
+        <p className="text-2xl font-extrabold tracking-tight text-blue-700">
           {cost}
-        </CardDescription>
+        </p>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-1">
         <p className="text-sm text-slate-600">{description}</p>
       </CardContent>
       {sourceUrl && (
@@ -50,7 +50,7 @@ export function ProjectCard({
             href={sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-xs text-slate-500 hover:underline"
+            className="flex cursor-pointer items-center gap-1 text-xs text-slate-500 hover:underline"
           >
             Source <ExternalLink className="size-3" />
           </a>

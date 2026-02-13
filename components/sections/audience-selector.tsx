@@ -11,7 +11,7 @@ const audiences = [
     icon: Users,
     href: "/for/personal",
     color: "text-blue-600",
-    hoverBg: "hover:border-blue-300 hover:bg-blue-50",
+    hoverBg: "hover:border-blue-400 hover:bg-blue-50",
   },
   {
     title: "School",
@@ -19,23 +19,23 @@ const audiences = [
     icon: GraduationCap,
     href: "/for/school",
     color: "text-purple-600",
-    hoverBg: "hover:border-purple-300 hover:bg-purple-50",
+    hoverBg: "hover:border-purple-400 hover:bg-purple-50",
   },
   {
     title: "Government",
     description: "Policy frameworks, grants, and civic partnership programs.",
     icon: Building2,
     href: "/for/government",
-    color: "text-emerald-600",
-    hoverBg: "hover:border-emerald-300 hover:bg-emerald-50",
+    color: "text-red-600",
+    hoverBg: "hover:border-red-400 hover:bg-red-50",
   },
   {
     title: "Investment",
     description: "Economic opportunities and development ROI projections.",
     icon: TrendingUp,
     href: "/for/investment",
-    color: "text-amber-600",
-    hoverBg: "hover:border-amber-300 hover:bg-amber-50",
+    color: "text-emerald-600",
+    hoverBg: "hover:border-emerald-400 hover:bg-emerald-50",
   },
 ];
 
@@ -56,12 +56,12 @@ export function AudienceSelector() {
           {audiences.map((audience) => {
             const Icon = audience.icon;
             return (
-              <Link key={audience.href} href={audience.href}>
+              <Link key={audience.href} href={audience.href} className="min-h-[44px]">
                 <Card
-                  className={`cursor-pointer border-2 border-transparent transition-all duration-200 ${audience.hoverBg}`}
+                  className={`cursor-pointer border-2 border-transparent transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${audience.hoverBg}`}
                 >
                   <CardHeader className="items-center text-center">
-                    <div className={`mb-2 rounded-xl bg-white p-3 shadow-sm ${audience.color}`}>
+                    <div className={`mb-2 rounded-xl bg-white p-3 shadow-sm transition-transform duration-200 group-hover:scale-110 ${audience.color}`}>
                       <Icon className="size-8" />
                     </div>
                     <CardTitle className="text-lg">{audience.title}</CardTitle>

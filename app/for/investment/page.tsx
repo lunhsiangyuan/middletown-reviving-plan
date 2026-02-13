@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   TrendingUp,
   Building2,
@@ -56,56 +57,134 @@ const marketStats = [
   },
 ];
 
-const investmentCases = [
+/* ---------- Existing Investment Cases ---------- */
+
+type SectorType =
+  | "Technology"
+  | "Media"
+  | "Education"
+  | "Healthcare"
+  | "Retail"
+  | "Food & Beverage";
+
+const sectorBadgeColors: Record<SectorType, string> = {
+  Technology: "bg-violet-100 text-violet-800",
+  Media: "bg-sky-100 text-sky-800",
+  Education: "bg-purple-100 text-purple-800",
+  Healthcare: "bg-emerald-100 text-emerald-800",
+  Retail: "bg-amber-100 text-amber-800",
+  "Food & Beverage": "bg-orange-100 text-orange-800",
+};
+
+const sectorGradients: Record<SectorType, string> = {
+  Technology: "from-violet-500 to-violet-700",
+  Media: "from-sky-500 to-sky-700",
+  Education: "from-purple-500 to-purple-700",
+  Healthcare: "from-emerald-500 to-emerald-700",
+  Retail: "from-amber-500 to-amber-700",
+  "Food & Beverage": "from-orange-500 to-orange-700",
+};
+
+interface InvestmentCaseItem {
+  name: string;
+  sector: SectorType;
+  description: string;
+  image?: string;
+  website?: string;
+}
+
+const existingInvestmentCases: InvestmentCaseItem[] = [
   {
     name: "Gan Jing World",
     sector: "Technology",
-    badge: "bg-sky-100 text-sky-800",
     description:
       "Technology and clean-content video platform headquartered in Middletown, bringing tech jobs and innovation to the community.",
-    investment: "HQ Operations",
+    image: "/images/ganjingworld.png",
+    website: "https://www.ganjingworld.com",
   },
   {
-    name: "NTD Television / The Epoch Times / Sound of Hope Radio",
+    name: "NTD Television",
     sector: "Media",
-    badge: "bg-amber-100 text-amber-800",
     description:
-      "A media cluster with multiple international news and broadcasting organizations operating in the Middletown area.",
-    investment: "Media Cluster",
+      "International multilingual television network providing independent news and cultural programming to a global audience.",
+    image: "/images/ntd.png",
+    website: "https://www.ntd.com",
   },
   {
-    name: "Mister Croissant / Taiwan Way / Monte Pastries",
-    sector: "Food & Beverage",
-    badge: "bg-orange-100 text-orange-800",
+    name: "The Epoch Times",
+    sector: "Media",
     description:
-      "Downtown restaurants and bakeries revitalizing North Street and the commercial core with diverse culinary offerings.",
-    investment: "Multiple Storefronts",
+      "Multi-language international media organization with print and digital news operations based in the Middletown area.",
+    image: "/images/epochtimes.png",
+    website: "https://www.theepochtimes.com",
+  },
+  {
+    name: "Sound of Hope Radio",
+    sector: "Media",
+    description:
+      "Chinese-language radio network delivering news and cultural content, with broadcasting operations in the region.",
+    image: "/images/soundofhope.png",
+    website: "https://www.soundofhope.org",
   },
   {
     name: "New Middletown Department Store",
     sector: "Retail",
-    badge: "bg-pink-100 text-pink-800",
     description:
-      "Major retail investment revitalizing a downtown commercial space into a full-service department store.",
-    investment: "$2.1M (Shen Yun)",
-  },
-  {
-    name: "Northern Medical Center",
-    sector: "Healthcare",
-    badge: "bg-emerald-100 text-emerald-800",
-    description:
-      "Integrative medical center offering Primary Care, Chinese Medicine, Mental Health, TMS, Physical Therapy, and more. Led by CEO Dr. Jingduan Yang.",
-    investment: "Healthcare Services",
+      "$2.1M retail investment by Shen Yun, revitalizing a downtown commercial space into a full-service department store.",
   },
   {
     name: "Fei Tian College",
     sector: "Education",
-    badge: "bg-purple-100 text-purple-800",
     description:
-      "NECHE-accredited college with programs in Dance, Fine Arts, Data Science, Biomedical Sciences, Quantum Computing, and Biostatistics.",
-    investment: "Academic Institution",
+      "NECHE-accredited college offering programs in Dance, Fine Arts, Data Science, Biomedical Sciences, Quantum Computing, and Biostatistics.",
+    image: "/images/feitian-college.png",
+    website: "https://www.feitian.edu",
+  },
+  {
+    name: "Fei Tian Academy",
+    sector: "Education",
+    description:
+      "K-12 arts school cultivating classical Chinese dance, music, and fine arts education for young students.",
+    image: "/images/feitian-academy.png",
+    website: "https://www.feitianacademy.org",
+  },
+  {
+    name: "Touro College of Osteopathic Medicine",
+    sector: "Education",
+    description:
+      "Medical school training the next generation of physicians, creating a healthcare workforce pipeline for the region.",
+    image: "/images/touro.png",
+    website: "https://tourocom.touro.edu",
+  },
+  {
+    name: "Northern Medical Center",
+    sector: "Healthcare",
+    description:
+      "Integrative medical center offering Primary Care, Chinese Medicine, Mental Health, TMS, Physical Therapy, and more.",
+    image: "/images/nmc.png",
+    website: "https://www.northernmedicalcenter.com",
+  },
+  {
+    name: "Taiwan Way",
+    sector: "Food & Beverage",
+    description:
+      "Taiwanese restaurant bringing authentic Asian cuisine to downtown Middletown, enriching the local dining scene.",
+  },
+  {
+    name: "Mister Croissant",
+    sector: "Food & Beverage",
+    description:
+      "French bakery offering artisan pastries and fresh-baked bread, adding European flair to the commercial core.",
+  },
+  {
+    name: "Monte Pastries",
+    sector: "Food & Beverage",
+    description:
+      "European pastry shop featuring handcrafted cakes and desserts, contributing to downtown revitalization.",
   },
 ];
+
+/* ---------- Opportunity Sectors ---------- */
 
 const opportunitySectors = [
   {
@@ -173,6 +252,64 @@ const strategicAdvantages = [
   },
 ];
 
+/* ========== Component ========== */
+
+function InvestmentCaseCard({ item }: { item: InvestmentCaseItem }) {
+  const badgeColor = sectorBadgeColors[item.sector];
+  const gradient = sectorGradients[item.sector];
+  const initial = item.name.charAt(0);
+
+  return (
+    <div className="group overflow-hidden rounded-xl border bg-white transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+      {/* Image / Placeholder */}
+      {item.image ? (
+        <div className="relative h-[225px] w-full overflow-hidden">
+          <Image
+            src={item.image}
+            alt={`${item.name} website screenshot`}
+            width={400}
+            height={225}
+            className="object-cover rounded-t-lg"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          />
+        </div>
+      ) : (
+        <div
+          className={`flex h-[225px] w-full items-center justify-center rounded-t-lg bg-gradient-to-br ${gradient}`}
+        >
+          <span className="text-6xl font-bold text-white/80">{initial}</span>
+        </div>
+      )}
+
+      {/* Content */}
+      <div className="p-4">
+        <div className="mb-2 flex items-start justify-between gap-2">
+          <h3 className="text-sm font-semibold leading-tight text-slate-900">
+            {item.name}
+          </h3>
+          <Badge className={`shrink-0 text-[10px] ${badgeColor}`}>
+            {item.sector}
+          </Badge>
+        </div>
+        <p className="mb-3 text-xs leading-relaxed text-slate-600">
+          {item.description}
+        </p>
+        {item.website && (
+          <a
+            href={item.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs font-medium text-green-700 transition-colors hover:text-green-900"
+          >
+            <ExternalLink className="size-3" />
+            Visit Website
+          </a>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function InvestmentPage() {
   return (
     <>
@@ -236,25 +373,9 @@ export default function InvestmentPage() {
           Middletown&apos;s revival, establishing a proven track record of
           growth.
         </p>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {investmentCases.map((item) => (
-            <Card
-              key={item.name}
-              className="transition-shadow hover:shadow-lg"
-            >
-              <CardHeader>
-                <div className="flex items-start justify-between gap-2">
-                  <CardTitle className="text-base">{item.name}</CardTitle>
-                  <Badge className={item.badge}>{item.sector}</Badge>
-                </div>
-                <CardDescription className="text-xs font-semibold text-green-700">
-                  {item.investment}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-slate-600">{item.description}</p>
-              </CardContent>
-            </Card>
+        <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {existingInvestmentCases.map((item) => (
+            <InvestmentCaseCard key={item.name} item={item} />
           ))}
         </div>
       </section>
