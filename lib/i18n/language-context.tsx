@@ -47,8 +47,16 @@ function getInitialLanguage(): Language {
   return "zh-TW";
 }
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
+export function LanguageProvider({
+  children,
+  initialLanguage,
+}: {
+  children: ReactNode;
+  initialLanguage?: Language;
+}) {
+  const [language, setLanguageState] = useState<Language>(
+    initialLanguage ?? getInitialLanguage()
+  );
 
   const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang);

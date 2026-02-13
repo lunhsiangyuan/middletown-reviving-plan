@@ -4,10 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Users, GraduationCap, Building2, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage, type Language } from "@/lib/i18n/language-context";
+
+const sidebarTitle: Record<Language, string> = {
+  en: "Audience",
+  "zh-TW": "受眾專區",
+  es: "Audiencia",
+};
 
 const audienceNav = [
   {
-    label: "Personal",
+    label: { en: "Personal", "zh-TW": "居民", es: "Personal" } as Record<Language, string>,
     href: "/for/personal",
     icon: Users,
     color: "text-blue-600",
@@ -15,7 +22,7 @@ const audienceNav = [
     activeBorder: "border-blue-600",
   },
   {
-    label: "School",
+    label: { en: "School", "zh-TW": "學校", es: "Escuela" } as Record<Language, string>,
     href: "/for/school",
     icon: GraduationCap,
     color: "text-purple-600",
@@ -23,7 +30,7 @@ const audienceNav = [
     activeBorder: "border-purple-600",
   },
   {
-    label: "Government",
+    label: { en: "Government", "zh-TW": "政府", es: "Gobierno" } as Record<Language, string>,
     href: "/for/government",
     icon: Building2,
     color: "text-red-600",
@@ -31,7 +38,7 @@ const audienceNav = [
     activeBorder: "border-red-600",
   },
   {
-    label: "Investment",
+    label: { en: "Investment", "zh-TW": "投資", es: "Inversión" } as Record<Language, string>,
     href: "/for/investment",
     icon: TrendingUp,
     color: "text-green-600",
@@ -46,6 +53,7 @@ export default function ForLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const { language } = useLanguage();
 
   return (
     <div className="pt-16">
@@ -67,7 +75,7 @@ export default function ForLayout({
                 )}
               >
                 <Icon className="size-4" />
-                {item.label}
+                {item.label[language] ?? item.label.en}
               </Link>
             );
           })}
@@ -78,7 +86,7 @@ export default function ForLayout({
         {/* Desktop sidebar */}
         <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-56 shrink-0 border-r bg-white p-4 lg:block">
           <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-slate-400">
-            Audience
+            {sidebarTitle[language] ?? sidebarTitle.en}
           </p>
           <nav className="flex flex-col gap-1">
             {audienceNav.map((item) => {
@@ -96,7 +104,7 @@ export default function ForLayout({
                   )}
                 >
                   <Icon className="size-4" />
-                  {item.label}
+                  {item.label[language] ?? item.label.en}
                 </Link>
               );
             })}

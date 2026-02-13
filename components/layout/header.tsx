@@ -20,33 +20,35 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useLanguage, type Language } from "@/lib/i18n/language-context";
 
 const topics = [
-  { title: "Campus", href: "/topics/campus" },
-  { title: "Healthcare", href: "/topics/healthcare" },
-  { title: "Education", href: "/topics/education" },
-  { title: "Revitalization", href: "/topics/revitalization" },
-  { title: "Lifestyle", href: "/topics/lifestyle" },
-  { title: "Transportation", href: "/topics/transportation" },
-  { title: "Case Studies", href: "/topics/case-studies" },
+  { titleKey: "nav.campus", href: "/campus" },
+  { titleKey: "nav.healthcare", href: "/healthcare" },
+  { titleKey: "nav.education", href: "/education" },
+  { titleKey: "nav.revitalization", href: "/revitalization" },
+  { titleKey: "nav.lifestyle", href: "/lifestyle" },
+  { titleKey: "nav.transportation", href: "/transportation" },
+  { titleKey: "nav.caseStudies", href: "/case-studies" },
 ];
 
 const audiences = [
-  { title: "Personal", href: "/for/personal" },
-  { title: "School", href: "/for/school" },
-  { title: "Government", href: "/for/government" },
-  { title: "Investment", href: "/for/investment" },
+  { titleKey: "nav.forPersonal", href: "/for/personal" },
+  { titleKey: "nav.forSchool", href: "/for/school" },
+  { titleKey: "nav.forGovernment", href: "/for/government" },
+  { titleKey: "nav.forInvestment", href: "/for/investment" },
 ];
 
-const languages = [
+const languages: { label: string; code: Language }[] = [
   { label: "EN", code: "en" },
-  { label: "中文", code: "zh" },
+  { label: "中文", code: "zh-TW" },
   { label: "ES", code: "es" },
 ];
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -75,8 +77,8 @@ export function Header() {
             <NavigationMenuList>
               {/* Topics Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className={isScrolled ? "text-slate-700" : "text-white/90 hover:text-white"}>
-                  Topics
+                <NavigationMenuTrigger className={`bg-transparent ${isScrolled ? "text-slate-700 hover:bg-slate-100" : "text-white/90 hover:text-white hover:bg-white/10"}`}>
+                  {t("nav.topics")}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-1 p-2 md:grid-cols-2">
@@ -87,7 +89,7 @@ export function Header() {
                             href={topic.href}
                             className="block select-none rounded-md p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-amber-50 hover:text-amber-700"
                           >
-                            {topic.title}
+                            {t(topic.titleKey)}
                           </Link>
                         </NavigationMenuLink>
                       </li>
@@ -98,8 +100,8 @@ export function Header() {
 
               {/* For Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className={isScrolled ? "text-slate-700" : "text-white/90 hover:text-white"}>
-                  For
+                <NavigationMenuTrigger className={`bg-transparent ${isScrolled ? "text-slate-700 hover:bg-slate-100" : "text-white/90 hover:text-white hover:bg-white/10"}`}>
+                  {t("nav.for")}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[200px] gap-1 p-2">
@@ -110,7 +112,7 @@ export function Header() {
                             href={audience.href}
                             className="block select-none rounded-md p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-violet-50 hover:text-violet-700"
                           >
-                            {audience.title}
+                            {t(audience.titleKey)}
                           </Link>
                         </NavigationMenuLink>
                       </li>
@@ -127,7 +129,14 @@ export function Header() {
               <Badge
                 key={lang.code}
                 variant="outline"
-                className="cursor-pointer text-xs hover:bg-slate-100"
+                onClick={() => setLanguage(lang.code)}
+                className={`cursor-pointer text-xs transition-colors ${
+                  language === lang.code
+                    ? "bg-amber-500 text-white border-amber-500 hover:bg-amber-600"
+                    : isScrolled
+                      ? "hover:bg-slate-100"
+                      : "text-white/80 border-white/30 hover:bg-white/10 hover:text-white"
+                }`}
               >
                 {lang.label}
               </Badge>
@@ -155,7 +164,7 @@ export function Header() {
                 {/* Topics */}
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                    Topics
+                    {t("nav.topics")}
                   </p>
                   <div className="flex flex-col gap-1">
                     {topics.map((topic) => (
@@ -165,7 +174,7 @@ export function Header() {
                         onClick={() => setOpen(false)}
                         className="rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-amber-50 hover:text-amber-700"
                       >
-                        {topic.title}
+                        {t(topic.titleKey)}
                       </Link>
                     ))}
                   </div>
@@ -174,7 +183,7 @@ export function Header() {
                 {/* For */}
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                    For
+                    {t("nav.for")}
                   </p>
                   <div className="flex flex-col gap-1">
                     {audiences.map((audience) => (
@@ -184,7 +193,7 @@ export function Header() {
                         onClick={() => setOpen(false)}
                         className="rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-violet-50 hover:text-violet-700"
                       >
-                        {audience.title}
+                        {t(audience.titleKey)}
                       </Link>
                     ))}
                   </div>
@@ -193,14 +202,19 @@ export function Header() {
                 {/* Languages */}
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                    Language
+                    {t("nav.language")}
                   </p>
                   <div className="flex gap-2">
                     {languages.map((lang) => (
                       <Badge
                         key={lang.code}
                         variant="outline"
-                        className="cursor-pointer hover:bg-slate-100"
+                        onClick={() => setLanguage(lang.code)}
+                        className={`cursor-pointer ${
+                          language === lang.code
+                            ? "bg-amber-500 text-white border-amber-500"
+                            : "hover:bg-slate-100"
+                        }`}
                       >
                         {lang.label}
                       </Badge>

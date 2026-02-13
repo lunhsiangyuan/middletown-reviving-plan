@@ -1,7 +1,10 @@
 {
   "nav": {
     "home": "Inicio",
-    "campus": "Campus DRI",
+    "topics": "Temas",
+    "for": "Para",
+    "language": "Idioma",
+    "campus": "Campus Comunitario",
     "healthcare": "Salud",
     "education": "Educación",
     "revitalization": "Revitalización",
@@ -29,38 +32,92 @@
     "title": "Donde la Tecnología Encuentra la Humanidad",
     "subtitle": "Una Fusión de Progreso y Sabiduría Ancestral",
     "tagline": "El Renacimiento de una Gran Civilización",
-    "cta": "Explorar Middletown"
+    "cta": "Explorar el Plan",
+    "ctaRole": "Encuentra Tu Rol"
   },
   "audiences": {
+    "selectPrompt": "Yo soy...",
+    "selectDesc": "Elige tu perspectiva para ver lo que más te importa.",
     "personal": {
-      "title": "Para Residentes",
-      "desc": "Descubra cómo el plan de revitalización mejora la vida diaria, el acceso a la salud y el bienestar comunitario para usted y su familia."
+      "title": "Residentes",
+      "desc": "Descubra cómo el plan de revitalización mejora la vida diaria, el acceso a la salud y el bienestar comunitario para usted y su familia.",
+      "shortDesc": "Descubra lo que Middletown ofrece para usted y su familia."
     },
     "school": {
-      "title": "Para Escuelas",
-      "desc": "Explore alianzas educativas, integración con el campus y oportunidades de aprendizaje que conectan a los estudiantes con la innovación real."
+      "title": "Escuelas",
+      "desc": "Explore alianzas educativas, integración con el campus y oportunidades de aprendizaje que conectan a los estudiantes con la innovación real.",
+      "shortDesc": "Oportunidades educativas y planes de desarrollo del campus."
     },
     "government": {
-      "title": "Para el Gobierno",
-      "desc": "Revise los marcos de políticas, planes de infraestructura y alianzas público-privadas que impulsan la transformación de Middletown."
+      "title": "Gobierno",
+      "desc": "Revise los marcos de políticas, planes de infraestructura y alianzas público-privadas que impulsan la transformación de Middletown.",
+      "shortDesc": "Marcos de políticas, subvenciones y programas de asociación cívica."
     },
     "investment": {
-      "title": "Para Inversionistas",
-      "desc": "Evalúe las oportunidades de mercado, proyecciones de crecimiento y ventajas estratégicas de invertir en el renacimiento de Middletown."
+      "title": "Inversión",
+      "desc": "Evalúe las oportunidades de mercado, proyecciones de crecimiento y ventajas estratégicas de invertir en el renacimiento de Middletown.",
+      "shortDesc": "Oportunidades económicas y proyecciones de ROI."
+    }
+  },
+  "home": {
+    "explore": {
+      "tagline": "Donde la Tecnología Encuentra la Humanidad",
+      "title": "Explorar el Plan",
+      "desc": "Siete pilares interconectados que impulsan la transformación de Middletown en una comunidad modelo del siglo XXI."
     },
-    "selectPrompt": "Yo soy..."
+    "timeline": "Cronología de Revitalización",
+    "topics": {
+      "campus": "Transformación de 270 acres de un antiguo centro psiquiátrico en un centro comunitario próspero.",
+      "healthcare": "Medicina integradora y servicios de salud regionales construyendo una comunidad más saludable.",
+      "education": "Cuatro instituciones de educación superior impulsando la excelencia académica y la innovación.",
+      "revitalization": "Iniciativa de Revitalización del Centro de $10M transformando el centro de la ciudad.",
+      "lifestyle": "Una mezcla vibrante de restaurantes, tiendas y destinos culturales en el centro.",
+      "transportation": "Conectividad estratégica con NYC, aeropuertos regionales y autopistas interestatales.",
+      "caseStudies": "Lecciones de ciudades comparables del Valle de Hudson que se han revitalizado con éxito."
+    }
   },
   "stats": {
     "driInvestment": "Inversión DRI",
-    "campusSize": "Tamaño del Campus",
+    "campusSize": "Acres del Campus",
     "population": "Población",
-    "avgHome": "Precio Promedio de Vivienda"
+    "avgHome": "Valor Promedio",
+    "driDesc": "Iniciativa de Revitalización del Centro",
+    "campusDesc": "Terreno del campus SUNY Orange / Touro",
+    "populationDesc": "Residentes de la Ciudad de Middletown",
+    "avgHomeDesc": "Propiedad residencial mediana"
+  },
+  "cta": {
+    "title": "Sé Parte del Cambio",
+    "desc": "Cada contribución acerca a Middletown a su visión.",
+    "donate": {
+      "title": "Donar",
+      "desc": "Apoye proyectos comunitarios y ayude a hacer realidad el plan de revitalización.",
+      "button": "Hacer una Contribución"
+    },
+    "collaborate": {
+      "title": "Colaborar",
+      "desc": "Asóciese con nosotros en iniciativas de educación, salud o desarrollo empresarial.",
+      "button": "Involúcrese"
+    },
+    "contact": {
+      "title": "Contáctenos",
+      "desc": "¿Tiene preguntas o ideas? Comuníquese con el comité de planificación.",
+      "button": "Enviar un Mensaje"
+    }
   },
   "footer": {
     "copyright": "Plan de Revitalización de Middletown. Todos los derechos reservados.",
     "about": "Acerca de",
-    "privacy": "Política de Privacidad",
-    "terms": "Términos de Servicio"
+    "aboutDesc": "El Plan de Revitalización de Middletown es una iniciativa impulsada por la comunidad para transformar y revitalizar Middletown, NY a través de inversiones estratégicas en educación, salud, infraestructura y desarrollo empresarial local.",
+    "topicsTitle": "Temas",
+    "stakeholdersTitle": "Para Interesados",
+    "connectTitle": "Conectar",
+    "contactUs": "Contáctenos",
+    "newsletter": "Boletín",
+    "twitterX": "Twitter / X",
+    "facebook": "Facebook",
+    "privacy": "Privacidad",
+    "terms": "Términos"
   },
   "pages": {
     "campus": {

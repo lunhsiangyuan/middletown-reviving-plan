@@ -1,7 +1,10 @@
 {
   "nav": {
     "home": "Home",
-    "campus": "DRI Campus",
+    "topics": "Topics",
+    "for": "For",
+    "language": "Language",
+    "campus": "Community Campus",
     "healthcare": "Healthcare",
     "education": "Education",
     "revitalization": "Revitalization",
@@ -29,38 +32,92 @@
     "title": "Where Technology Meets Humanity",
     "subtitle": "A Fusion of Progress and Ancient Wisdom",
     "tagline": "The Renaissance of Great Civilization",
-    "cta": "Explore Middletown"
+    "cta": "Explore the Plan",
+    "ctaRole": "Find Your Role"
   },
   "audiences": {
+    "selectPrompt": "I am a...",
+    "selectDesc": "Choose your perspective to see what matters most to you.",
     "personal": {
-      "title": "For Residents",
-      "desc": "Discover how the revitalization plan improves daily life, healthcare access, and community well-being for you and your family."
+      "title": "Personal",
+      "desc": "Discover how the revitalization plan improves daily life, healthcare access, and community well-being for you and your family.",
+      "shortDesc": "Discover what Middletown offers for you and your family."
     },
     "school": {
-      "title": "For Schools",
-      "desc": "Explore educational partnerships, campus integration, and learning opportunities that connect students to real-world innovation."
+      "title": "School",
+      "desc": "Explore educational partnerships, campus integration, and learning opportunities that connect students to real-world innovation.",
+      "shortDesc": "Educational opportunities and campus development plans."
     },
     "government": {
-      "title": "For Government",
-      "desc": "Review policy frameworks, infrastructure plans, and public-private partnerships driving Middletown's transformation."
+      "title": "Government",
+      "desc": "Review policy frameworks, infrastructure plans, and public-private partnerships driving Middletown's transformation.",
+      "shortDesc": "Policy frameworks, grants, and civic partnership programs."
     },
     "investment": {
-      "title": "For Investors",
-      "desc": "Evaluate market opportunities, growth projections, and strategic advantages of investing in Middletown's renaissance."
+      "title": "Investment",
+      "desc": "Evaluate market opportunities, growth projections, and strategic advantages of investing in Middletown's renaissance.",
+      "shortDesc": "Economic opportunities and development ROI projections."
+    }
+  },
+  "home": {
+    "explore": {
+      "tagline": "Where Technology Meets Humanity",
+      "title": "Explore the Plan",
+      "desc": "Seven interconnected pillars driving Middletown's transformation into a model 21st-century community."
     },
-    "selectPrompt": "I am a..."
+    "timeline": "Revitalization Timeline",
+    "topics": {
+      "campus": "270-acre campus transformation from former psychiatric center to thriving community hub.",
+      "healthcare": "Integrative medicine and regional health services building a healthier community.",
+      "education": "Four institutions of higher learning driving academic excellence and innovation.",
+      "revitalization": "$10M Downtown Revitalization Initiative transforming the city center.",
+      "lifestyle": "A vibrant mix of dining, shopping, and cultural destinations downtown.",
+      "transportation": "Strategic connectivity to NYC, regional airports, and interstate highways.",
+      "caseStudies": "Lessons from comparable Hudson Valley cities that have revitalized successfully."
+    }
   },
   "stats": {
     "driInvestment": "DRI Investment",
-    "campusSize": "Campus Size",
+    "campusSize": "Campus Acres",
     "population": "Population",
-    "avgHome": "Avg. Home Price"
+    "avgHome": "Avg Home Value",
+    "driDesc": "Downtown Revitalization Initiative",
+    "campusDesc": "SUNY Orange / Touro campus land",
+    "populationDesc": "City of Middletown residents",
+    "avgHomeDesc": "Median residential property"
+  },
+  "cta": {
+    "title": "Be Part of the Change",
+    "desc": "Every contribution moves Middletown closer to its vision.",
+    "donate": {
+      "title": "Donate",
+      "desc": "Support community projects and help bring the reviving plan to life.",
+      "button": "Make a Contribution"
+    },
+    "collaborate": {
+      "title": "Collaborate",
+      "desc": "Partner with us on initiatives in education, healthcare, or business development.",
+      "button": "Get Involved"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "desc": "Have questions or ideas? Reach out to the planning committee.",
+      "button": "Send a Message"
+    }
   },
   "footer": {
     "copyright": "Middletown Reviving Plan. All rights reserved.",
     "about": "About",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "aboutDesc": "The Middletown Reviving Plan is a community-driven initiative to transform and revitalize Middletown, NY through strategic investments in education, healthcare, infrastructure, and local business development.",
+    "topicsTitle": "Topics",
+    "stakeholdersTitle": "For Stakeholders",
+    "connectTitle": "Connect",
+    "contactUs": "Contact Us",
+    "newsletter": "Newsletter",
+    "twitterX": "Twitter / X",
+    "facebook": "Facebook",
+    "privacy": "Privacy",
+    "terms": "Terms"
   },
   "pages": {
     "campus": {

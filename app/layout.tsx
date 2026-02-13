@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { Inter, Noto_Sans_TC, Noto_Serif_TC } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { LanguageProvider } from "@/lib/i18n/language-context";
+import { LanguageProvider, type Language } from "@/lib/i18n/language-context";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,17 +32,25 @@ export const metadata: Metadata = {
     "Middletown, NY 社區振興生態系統展示平台。當科技遇上人性，進步與傳統智慧的融合，偉大文明與文藝復興的再現。",
 };
 
-export default function RootLayout({
+const VALID_LANGS = new Set<Language>(["en", "zh-TW", "es"]);
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const langCookie = cookieStore.get("lang")?.value ?? "";
+  const initialLang: Language = VALID_LANGS.has(langCookie as Language)
+    ? (langCookie as Language)
+    : "zh-TW";
+
   return (
-    <html lang="zh-TW">
+    <html lang={initialLang}>
       <body
         className={`${inter.variable} ${notoSansTC.variable} ${notoSerifTC.variable} font-sans antialiased`}
       >
-        <LanguageProvider>
+        <LanguageProvider initialLanguage={initialLang}>
           <Header />
           <main className="min-h-screen">{children}</main>
           <Footer />

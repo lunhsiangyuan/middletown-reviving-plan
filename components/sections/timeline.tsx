@@ -28,9 +28,10 @@ const dotColors: Record<string, string> = {
 interface TimelineProps {
   events: TimelineEvent[];
   title?: string;
+  categoryLabels?: Record<string, string>;
 }
 
-export function Timeline({ events, title = "Timeline" }: TimelineProps) {
+export function Timeline({ events, title = "Timeline", categoryLabels }: TimelineProps) {
   return (
     <section className="py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -75,7 +76,7 @@ export function Timeline({ events, title = "Timeline" }: TimelineProps) {
                           </p>
                           <div className="mt-2 flex justify-end">
                             <Badge className={badgeColor}>
-                              {event.category}
+                              {categoryLabels?.[event.category] ?? event.category}
                             </Badge>
                           </div>
                         </div>
@@ -102,7 +103,7 @@ export function Timeline({ events, title = "Timeline" }: TimelineProps) {
                           </p>
                           <div className="mt-2">
                             <Badge className={badgeColor}>
-                              {event.category}
+                              {categoryLabels?.[event.category] ?? event.category}
                             </Badge>
                           </div>
                         </div>
@@ -123,7 +124,7 @@ export function Timeline({ events, title = "Timeline" }: TimelineProps) {
                     </p>
                     <div className="mt-2">
                       <Badge className={badgeColor}>
-                        {event.category}
+                        {categoryLabels?.[event.category] ?? event.category}
                       </Badge>
                     </div>
                   </div>
