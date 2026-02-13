@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "campus": "Campus DRI",
+    "healthcare": "Salud",
+    "education": "Educación",
+    "revitalization": "Revitalización",
+    "lifestyle": "Estilo de Vida",
+    "transportation": "Transporte",
+    "caseStudies": "Casos de Estudio",
+    "forPersonal": "Para Residentes",
+    "forSchool": "Para Escuelas",
+    "forGovernment": "Para el Gobierno",
+    "forInvestment": "Para Inversionistas"
+  },
+  "common": {
+    "learnMore": "Más Información",
+    "viewAll": "Ver Todo",
+    "download": "Descargar",
+    "contact": "Contáctenos",
+    "donate": "Donar",
+    "collaborate": "Colaborar",
+    "readMore": "Leer Más",
+    "backToHome": "Volver al Inicio",
+    "sources": "Fuentes",
+    "aiDisclaimer": "Ilustración conceptual generada por IA"
+  },
+  "hero": {
+    "title": "Donde la Tecnología Encuentra la Humanidad",
+    "subtitle": "Una Fusión de Progreso y Sabiduría Ancestral",
+    "tagline": "El Renacimiento de una Gran Civilización",
+    "cta": "Explorar Middletown"
+  },
+  "audiences": {
+    "personal": {
+      "title": "Para Residentes",
+      "desc": "Descubra cómo el plan de revitalización mejora la vida diaria, el acceso a la salud y el bienestar comunitario para usted y su familia."
+    },
+    "school": {
+      "title": "Para Escuelas",
+      "desc": "Explore alianzas educativas, integración con el campus y oportunidades de aprendizaje que conectan a los estudiantes con la innovación real."
+    },
+    "government": {
+      "title": "Para el Gobierno",
+      "desc": "Revise los marcos de políticas, planes de infraestructura y alianzas público-privadas que impulsan la transformación de Middletown."
+    },
+    "investment": {
+      "title": "Para Inversionistas",
+      "desc": "Evalúe las oportunidades de mercado, proyecciones de crecimiento y ventajas estratégicas de invertir en el renacimiento de Middletown."
+    },
+    "selectPrompt": "Yo soy..."
+  },
+  "stats": {
+    "driInvestment": "Inversión DRI",
+    "campusSize": "Tamaño del Campus",
+    "population": "Población",
+    "avgHome": "Precio Promedio de Vivienda"
+  },
+  "footer": {
+    "copyright": "Plan de Revitalización de Middletown. Todos los derechos reservados.",
+    "about": "Acerca de",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  },
+  "pages": {
+    "campus": {
+      "title": "Campus DRI",
+      "desc": "Un campus de investigación e innovación de clase mundial que ancla el futuro económico de Middletown."
+    },
+    "healthcare": {
+      "title": "Salud",
+      "desc": "Transformando el acceso y la calidad de la atención médica a través de la tecnología y el cuidado centrado en la comunidad."
+    },
+    "education": {
+      "title": "Educación",
+      "desc": "Construyendo un ecosistema educativo que prepara a la próxima generación para un mundo impulsado por la tecnología."
+    },
+    "revitalization": {
+      "title": "Revitalización",
+      "desc": "Dando nueva vida al centro, los vecindarios y los espacios públicos de Middletown."
+    },
+    "lifestyle": {
+      "title": "Estilo de Vida",
+      "desc": "Creando una comunidad vibrante con cultura, gastronomía, recreación y calidad de vida."
+    },
+    "transportation": {
+      "title": "Transporte",
+      "desc": "Conectando Middletown con redes de transporte modernas, sostenibles y accesibles."
+    },
+    "caseStudies": {
+      "title": "Casos de Estudio",
+      "desc": "Ejemplos reales de revitalización comunitaria exitosa y crecimiento impulsado por la innovación."
+    }
+  }
+}

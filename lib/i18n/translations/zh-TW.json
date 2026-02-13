@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "home": "首頁",
+    "campus": "DRI 園區",
+    "healthcare": "醫療",
+    "education": "教育",
+    "revitalization": "都市更新",
+    "lifestyle": "生活",
+    "transportation": "交通",
+    "caseStudies": "案例研究",
+    "forPersonal": "居民專區",
+    "forSchool": "學校專區",
+    "forGovernment": "政府專區",
+    "forInvestment": "投資專區"
+  },
+  "common": {
+    "learnMore": "了解更多",
+    "viewAll": "查看全部",
+    "download": "下載",
+    "contact": "聯絡我們",
+    "donate": "捐款",
+    "collaborate": "合作",
+    "readMore": "閱讀更多",
+    "backToHome": "返回首頁",
+    "sources": "資料來源",
+    "aiDisclaimer": "AI 生成概念圖"
+  },
+  "hero": {
+    "title": "當科技遇上人性",
+    "subtitle": "進步與傳統智慧的融合",
+    "tagline": "偉大文明與文藝復興的再現",
+    "cta": "探索 Middletown"
+  },
+  "audiences": {
+    "personal": {
+      "title": "居民專區",
+      "desc": "了解振興計畫如何改善日常生活、醫療可近性，以及您和家人的社區福祉。"
+    },
+    "school": {
+      "title": "學校專區",
+      "desc": "探索教育合作、園區整合，以及將學生與真實世界創新連結的學習機會。"
+    },
+    "government": {
+      "title": "政府專區",
+      "desc": "檢視推動 Middletown 轉型的政策框架、基礎建設計畫與公私協力夥伴關係。"
+    },
+    "investment": {
+      "title": "投資專區",
+      "desc": "評估市場機會、成長預測，以及投資 Middletown 復興的策略優勢。"
+    },
+    "selectPrompt": "我是..."
+  },
+  "stats": {
+    "driInvestment": "DRI 投資額",
+    "campusSize": "園區面積",
+    "population": "人口",
+    "avgHome": "平均房價"
+  },
+  "footer": {
+    "copyright": "Middletown 振興計畫。版權所有。",
+    "about": "關於我們",
+    "privacy": "隱私政策",
+    "terms": "服務條款"
+  },
+  "pages": {
+    "campus": {
+      "title": "DRI 園區",
+      "desc": "世界級研究與創新園區，奠定 Middletown 經濟未來的基石。"
+    },
+    "healthcare": {
+      "title": "醫療",
+      "desc": "透過科技與以社區為中心的照護模式，改善醫療可近性與品質。"
+    },
+    "education": {
+      "title": "教育",
+      "desc": "打造培育下一代面對科技驅動世界的教育生態系統。"
+    },
+    "revitalization": {
+      "title": "都市更新",
+      "desc": "為 Middletown 的市中心、社區與公共空間注入新活力。"
+    },
+    "lifestyle": {
+      "title": "生活",
+      "desc": "打造充滿文化、餐飲、休閒與生活品質的活力社區。"
+    },
+    "transportation": {
+      "title": "交通",
+      "desc": "以現代化、永續且便利的交通網絡連結 Middletown。"
+    },
+    "caseStudies": {
+      "title": "案例研究",
+      "desc": "成功社區振興與創新驅動成長的真實案例。"
+    }
+  }
+}
