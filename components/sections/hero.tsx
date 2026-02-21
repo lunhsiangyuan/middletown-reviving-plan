@@ -84,19 +84,19 @@ export function Hero() {
         <div className="mx-auto mb-8 max-w-3xl bg-slate-800/60 backdrop-blur-sm border border-orange-600/30 px-6 py-4 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
           <div>
             <div className="text-2xl font-mono font-bold tabular-nums text-orange-400">$234M</div>
-            <div className="text-xs text-slate-400 uppercase tracking-wide">Total Investment</div>
+            <div className="text-xs text-slate-400 tracking-wide">總投資額</div>
           </div>
           <div>
             <div className="text-2xl font-mono font-bold tabular-nums text-orange-400">270</div>
-            <div className="text-xs text-slate-400 uppercase tracking-wide">Acres</div>
+            <div className="text-xs text-slate-400 tracking-wide">英畝開發面積</div>
           </div>
           <div>
             <div className="text-2xl font-mono font-bold tabular-nums text-orange-400">30,345</div>
-            <div className="text-xs text-slate-400 uppercase tracking-wide">Population</div>
+            <div className="text-xs text-slate-400 tracking-wide">受惠人口</div>
           </div>
           <div>
             <div className="text-2xl font-mono font-bold tabular-nums text-emerald-400">2,847</div>
-            <div className="text-xs text-slate-400 uppercase tracking-wide">Jobs Created</div>
+            <div className="text-xs text-slate-400 tracking-wide">就業機會</div>
           </div>
         </div>
 
