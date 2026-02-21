@@ -29,9 +29,69 @@ interface TimelineProps {
   events: TimelineEvent[];
   title?: string;
   categoryLabels?: Record<string, string>;
+  horizontal?: boolean;
+  todayLabel?: string;
 }
 
-export function Timeline({ events, title = "Timeline", categoryLabels }: TimelineProps) {
+const CURRENT_YEAR = 2026;
+
+export function Timeline({ events, title = "Timeline", categoryLabels, horizontal = false, todayLabel }: TimelineProps) {
+  if (horizontal) {
+    return (
+      <section className="py-20 bg-slate-50 border-t border-slate-200">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 flex items-center gap-3">
+            <div className="h-6 w-1 bg-orange-600" />
+            <span className="text-sm font-mono uppercase tracking-widest text-slate-500">
+              TIMELINE
+            </span>
+          </div>
+          <h2 className="mb-10 text-center text-3xl font-bold text-slate-900" style={{ fontFamily: 'var(--font-noto-serif-tc)' }}>
+            {title}
+          </h2>
+
+          <div className="overflow-x-auto pb-4">
+            <div className="flex items-start gap-0 min-w-max px-8">
+              {events.map((event, index) => {
+                const isToday = event.year === CURRENT_YEAR;
+                const dotClass = isToday
+                  ? 'bg-orange-500 animate-pulse ring-4 ring-orange-200'
+                  : dotColors[event.category] || 'bg-slate-500';
+
+                return (
+                  <div key={`${event.year}-${event.title}`} className="flex flex-col items-center" style={{ minWidth: '160px' }}>
+                    <div className="flex items-center w-full">
+                      <div className={`w-3 h-3 rounded-full flex-shrink-0 ${dotClass}`} />
+                      {index < events.length - 1 && (
+                        <div className="flex-1 h-0.5 bg-slate-200" />
+                      )}
+                    </div>
+                    <div className="pt-3 px-2 text-center max-w-[140px]">
+                      <div className={`text-xs font-mono mb-1 ${isToday ? 'text-orange-500 font-bold' : 'text-slate-400'}`}>
+                        {event.year}
+                      </div>
+                      <div className="text-sm font-medium text-slate-800 leading-snug">{event.title}</div>
+                      {isToday && (
+                        <span className="inline-block mt-1 bg-orange-600 text-white text-xs px-2 py-0.5">
+                          {todayLabel || "← Today"}
+                        </span>
+                      )}
+                      <div className="mt-1">
+                        <span className={`text-xs px-1.5 py-0.5 rounded ${categoryColors[event.category] || 'bg-slate-100 text-slate-600'}`}>
+                          {categoryLabels?.[event.category] ?? event.category}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

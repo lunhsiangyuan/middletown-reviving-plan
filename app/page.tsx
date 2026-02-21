@@ -4,6 +4,7 @@ import { AudienceSelector } from "@/components/sections/audience-selector";
 import { StatsSection } from "@/components/sections/stats-section";
 import { TopicsGrid } from "@/components/sections/topics-grid";
 import { TimelineWrapper } from "@/components/sections/timeline-wrapper";
+import { CommunityStories } from "@/components/sections/community-stories";
 import { CTASection } from "@/components/sections/cta-section";
 import { ScrollMapExplorer } from "@/components/sections/scroll-map-explorer";
 
@@ -38,15 +39,18 @@ export default function Home() {
       {/* Stats Section */}
       <StatsSection />
 
-      {/* Timeline */}
-      <TimelineWrapper />
+      {/* Community Impact Stories */}
+      <CommunityStories />
+
+      {/* Timeline — horizontal mode */}
+      <TimelineWrapper horizontal />
 
       {/* Decorative divider */}
       <div className="section-divider">
         <span className="text-amber-400">◆</span>
       </div>
 
-      {/* Interactive Map — Scroll-Driven Explorer */}
+      {/* Scroll-Driven Explorer */}
       <ScrollMapExplorer />
 
       {/* Decorative divider */}

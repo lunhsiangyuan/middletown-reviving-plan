@@ -1,69 +1,80 @@
 "use client";
 
-import { DollarSign, MapPin, Users, Home } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 
-const stats = [
-  {
-    labelKey: "stats.driInvestment",
-    value: "$10M",
-    icon: DollarSign,
-    descKey: "stats.driDesc",
+const translations = {
+  "zh-TW": {
+    sectionLabel: "政策指標 — 現況 vs. 目標",
+    stats: [
+      { label: "就業機會", current: "2,847", target: "5,000", progress: 57 },
+      { label: "住宅單位", current: "450", target: "1,200", progress: 38 },
+      { label: "投資金額（M）", current: "$234", target: "$500", progress: 47 },
+      { label: "計畫完成率", current: "12", target: "28", progress: 43 },
+    ],
+    targetPrefix: "/ 目標",
+    achievedSuffix: "達成",
   },
-  {
-    labelKey: "stats.campusSize",
-    value: "270",
-    icon: MapPin,
-    descKey: "stats.campusDesc",
+  en: {
+    sectionLabel: "Policy Metrics — Current vs. Target",
+    stats: [
+      { label: "Jobs Created", current: "2,847", target: "5,000", progress: 57 },
+      { label: "Housing Units", current: "450", target: "1,200", progress: 38 },
+      { label: "Investment (M)", current: "$234", target: "$500", progress: 47 },
+      { label: "Projects Completed", current: "12", target: "28", progress: 43 },
+    ],
+    targetPrefix: "/ Target",
+    achievedSuffix: "achieved",
   },
-  {
-    labelKey: "stats.population",
-    value: "30,345",
-    icon: Users,
-    descKey: "stats.populationDesc",
+  es: {
+    sectionLabel: "Indicadores — Actual vs. Meta",
+    stats: [
+      { label: "Empleos Creados", current: "2,847", target: "5,000", progress: 57 },
+      { label: "Unidades de Vivienda", current: "450", target: "1,200", progress: 38 },
+      { label: "Inversión (M)", current: "$234", target: "$500", progress: 47 },
+      { label: "Proyectos Completados", current: "12", target: "28", progress: 43 },
+    ],
+    targetPrefix: "/ Meta",
+    achievedSuffix: "logrado",
   },
-  {
-    labelKey: "stats.avgHome",
-    value: "$395K",
-    icon: Home,
-    descKey: "stats.avgHomeDesc",
-  },
-];
+} as const;
 
 export function StatsSection() {
-  const { t } = useLanguage();
+  const { language } = useLanguage();
+  const t = translations[language];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-violet-900 to-indigo-950 py-16">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute -top-24 -right-24 size-96 rounded-full bg-amber-400 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 size-96 rounded-full bg-violet-400 blur-3xl" />
-      </div>
-
+    <section className="relative overflow-hidden bg-slate-50 py-16 border-b border-slate-200">
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-          {stats.map((stat) => {
-            const Icon = stat.icon;
-            return (
-              <div
-                key={stat.labelKey}
-                className="group cursor-default rounded-2xl p-6 text-center transition-all duration-200 hover:scale-105 hover:bg-white/5"
-              >
-                <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-full bg-amber-500/20 transition-colors group-hover:bg-amber-500/30">
-                  <Icon className="size-6 text-amber-300" />
-                </div>
-                <p className="text-3xl font-bold text-amber-300 sm:text-4xl">
-                  {stat.value}
-                </p>
-                <p className="mt-1 text-sm font-medium text-violet-200">
-                  {t(stat.labelKey)}
-                </p>
-                <p className="mt-0.5 text-xs text-violet-300/70">
-                  {t(stat.descKey)}
-                </p>
+        <div className="mb-8 flex items-center gap-3">
+          <div className="h-6 w-1 bg-orange-600" />
+          <span className="text-sm font-mono uppercase tracking-widest text-slate-500">
+            {t.sectionLabel}
+          </span>
+        </div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {t.stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="bg-white border border-slate-200 p-6"
+            >
+              <div className="text-sm font-mono text-slate-500 uppercase tracking-widest mb-2">
+                {stat.label}
               </div>
-            );
-          })}
+              <div className="flex items-end gap-3 mb-3">
+                <span className="text-4xl font-mono font-bold text-slate-900 tabular-nums">
+                  {stat.current}
+                </span>
+                <span className="text-sm text-slate-500 mb-1">{t.targetPrefix} {stat.target}</span>
+              </div>
+              <div className="w-full bg-slate-100 h-2 rounded-full">
+                <div
+                  className="bg-orange-600 h-2 rounded-full transition-all duration-1000"
+                  style={{ width: `${stat.progress}%` }}
+                />
+              </div>
+              <div className="text-xs text-slate-400 mt-1">{stat.progress}% {t.achievedSuffix}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
