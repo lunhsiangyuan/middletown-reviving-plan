@@ -7,3 +7,4 @@ export * from "./timeline";
 export * from "./demographics";
 export * from "./case-studies";
 export * from "./references";
+export * from "./topic-locations";

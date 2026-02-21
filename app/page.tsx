@@ -5,6 +5,7 @@ import { StatsSection } from "@/components/sections/stats-section";
 import { TopicsGrid } from "@/components/sections/topics-grid";
 import { TimelineWrapper } from "@/components/sections/timeline-wrapper";
 import { CTASection } from "@/components/sections/cta-section";
+import { ScrollMapExplorer } from "@/components/sections/scroll-map-explorer";
 
 export const metadata: Metadata = {
   title: "Middletown Reviving Plan | Where Technology Meets Humanity",
@@ -39,6 +40,14 @@ export default function Home() {
 
       {/* Timeline */}
       <TimelineWrapper />
+
+      {/* Decorative divider */}
+      <div className="section-divider">
+        <span className="text-amber-400">◆</span>
+      </div>
+
+      {/* Interactive Map — Scroll-Driven Explorer */}
+      <ScrollMapExplorer />
 
       {/* Decorative divider */}
       <div className="section-divider">

@@ -18,6 +18,7 @@ import {
 import { OrgCard } from "@/components/cards/org-card";
 import { ReferenceLinks } from "@/components/reference-links";
 import { CTASection } from "@/components/sections/cta-section";
+import { MapSection } from "@/components/sections/map-section";
 import { resolveOrganizations } from "@/lib/data/organizations";
 import { resolveReferences } from "@/lib/data/references";
 import { useLanguage } from "@/lib/i18n/language-context";
@@ -201,6 +202,23 @@ export function CampusClient() {
 
       {/* References */}
       <ReferenceLinks references={campusRefs} />
+
+      {/* Campus Map */}
+      <MapSection
+        title="Campus Location"
+        description="The 270-acre former Middletown Psychiatric Center now transformed into a vibrant community hub."
+        badgeLabel="Location"
+        center={[41.4552, -74.4371]}
+        zoom={15}
+        markers={[
+          {
+            id: "campus-center",
+            position: [41.4552, -74.4371],
+            title: "Community Campus",
+            description: "Home to Fei Tian College and Northern Academy"
+          }
+        ]}
+      />
 
       {/* CTA */}
       <CTASection />

@@ -119,6 +119,42 @@
     "privacy": "Privacy",
     "terms": "Terms"
   },
+  "mapExplorer": {
+    "badge": "Interactive Map",
+    "title": "Explore Middletown",
+    "desc": "Scroll through topics to explore key locations and community assets.",
+    "backToMap": "Back to Map",
+    "topics": {
+      "campus": {
+        "title": "Community Campus",
+        "desc": "Former Psychiatric Center transformed into a 270-acre education & community hub with multiple institutions."
+      },
+      "healthcare": {
+        "title": "Healthcare & Wellness",
+        "desc": "Integrative medical ecosystem blending Western and Eastern medicine, anchored by Northern Medical Center."
+      },
+      "education": {
+        "title": "Education Hub",
+        "desc": "From community college to osteopathic medicine, Middletown hosts diverse higher education institutions."
+      },
+      "revitalization": {
+        "title": "Downtown Revitalization",
+        "desc": "$10M DRI investment transforming downtown with streetscape improvements, green infrastructure, and facade upgrades."
+      },
+      "lifestyle": {
+        "title": "Lifestyle & Culture",
+        "desc": "Vibrant local dining, artisan shops, and cultural events enriching the Middletown community experience."
+      },
+      "transportation": {
+        "title": "Transportation & Access",
+        "desc": "Rail connections, Heritage Trail, and strategic location 60 miles from NYC make Middletown highly accessible."
+      },
+      "technology": {
+        "title": "Technology & Innovation",
+        "desc": "Gan Jing World HQ and growing tech presence position Middletown as an emerging technology corridor."
+      }
+    }
+  },
   "pages": {
     "campus": {
       "title": "DRI Campus",

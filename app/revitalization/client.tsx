@@ -17,6 +17,7 @@ import {
 import { ProjectCard } from "@/components/cards/project-card";
 import { ReferenceLinks } from "@/components/reference-links";
 import { CTASection } from "@/components/sections/cta-section";
+import { MapSection } from "@/components/sections/map-section";
 import { resolveDRIProjects } from "@/lib/data/dri-projects";
 import { resolveDemographicProfile } from "@/lib/data/demographics";
 import { resolveReferences } from "@/lib/data/references";
@@ -174,35 +175,58 @@ export function RevitalizationClient() {
                 ["population", "avg-home-price", "dri-investment", "median-income"].includes(s.id)
               )
               .map((stat) => (
-                  <Card key={stat.id}>
-                    <CardHeader>
-                      <div className="flex items-center gap-2">
-                        <DollarSign className="size-4 text-amber-600" />
-                        <p className="text-sm font-medium text-slate-500">
-                          {stat.label}
-                        </p>
-                      </div>
-                      <CardTitle className="text-2xl text-amber-700">
-                        {typeof stat.value === "number"
-                          ? stat.unit === "USD"
-                            ? `$${stat.value.toLocaleString()}`
-                            : stat.value.toLocaleString()
-                          : stat.value}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-xs text-slate-500">
-                        {stat.description}
+                <Card key={stat.id}>
+                  <CardHeader>
+                    <div className="flex items-center gap-2">
+                      <DollarSign className="size-4 text-amber-600" />
+                      <p className="text-sm font-medium text-slate-500">
+                        {stat.label}
                       </p>
-                    </CardContent>
-                  </Card>
-                ))}
+                    </div>
+                    <CardTitle className="text-2xl text-amber-700">
+                      {typeof stat.value === "number"
+                        ? stat.unit === "USD"
+                          ? `$${stat.value.toLocaleString()}`
+                          : stat.value.toLocaleString()
+                        : stat.value}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-xs text-slate-500">
+                      {stat.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
           </div>
         </div>
       </section>
 
       {/* References */}
       <ReferenceLinks references={revitalizationRefs} />
+
+      {/* Revitalization Map */}
+      <MapSection
+        title="Downtown & North Street"
+        description="Key locations for the $10M Downtown Revitalization Initiative and North Street Revival."
+        badgeLabel="Location"
+        center={[41.4450, -74.4200]}
+        zoom={16}
+        markers={[
+          {
+            id: "north-street",
+            position: [41.4450, -74.4200],
+            title: "North Street Revival",
+            description: "Historic commercial corridor"
+          },
+          {
+            id: "heritage-trail",
+            position: [41.4410, -74.4180],
+            title: "Heritage Trail",
+            description: "Connecting the city to the region"
+          }
+        ]}
+      />
 
       {/* CTA */}
       <CTASection />

@@ -119,6 +119,42 @@
     "privacy": "隱私政策",
     "terms": "服務條款"
   },
+  "mapExplorer": {
+    "badge": "互動地圖",
+    "title": "探索 Middletown",
+    "desc": "捲動瀏覽各主題，探索關鍵地點與社區資產。",
+    "backToMap": "回到地圖",
+    "topics": {
+      "campus": {
+        "title": "社區園區",
+        "desc": "前精神病院改造為 270 英畝的教育與社區樞紐，擁有多所機構。"
+      },
+      "healthcare": {
+        "title": "醫療健康",
+        "desc": "以 Northern Medical Center 為核心，融合中西醫的整合醫療生態系。"
+      },
+      "education": {
+        "title": "教育樞紐",
+        "desc": "從社區大學到骨科醫學院，Middletown 擁有多元化的高等教育機構。"
+      },
+      "revitalization": {
+        "title": "市中心振興",
+        "desc": "一千萬美元 DRI 投資，透過街景改善、綠色基礎設施和立面翻新改造市中心。"
+      },
+      "lifestyle": {
+        "title": "生活與文化",
+        "desc": "活力十足的在地餐飲、藝匠店鋪和文化活動，豐富 Middletown 社區體驗。"
+      },
+      "transportation": {
+        "title": "交通運輸",
+        "desc": "鐵路連結、Heritage Trail 步道，加上距紐約市僅 60 英里的策略位置，交通便利。"
+      },
+      "technology": {
+        "title": "科技創新",
+        "desc": "乾淨世界總部與日益壯大的科技產業，將 Middletown 定位為新興科技走廊。"
+      }
+    }
+  },
   "pages": {
     "campus": {
       "title": "DRI 園區",

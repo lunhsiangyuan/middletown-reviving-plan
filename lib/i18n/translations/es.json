@@ -119,6 +119,42 @@
     "privacy": "Privacidad",
     "terms": "Términos"
   },
+  "mapExplorer": {
+    "badge": "Mapa Interactivo",
+    "title": "Explorar Middletown",
+    "desc": "Desplácese por los temas para explorar ubicaciones clave y activos comunitarios.",
+    "backToMap": "Volver al Mapa",
+    "topics": {
+      "campus": {
+        "title": "Campus Comunitario",
+        "desc": "Antiguo centro psiquiátrico transformado en un centro educativo y comunitario de 270 acres con múltiples instituciones."
+      },
+      "healthcare": {
+        "title": "Salud y Bienestar",
+        "desc": "Ecosistema médico integrativo que combina medicina occidental y oriental, anclado por Northern Medical Center."
+      },
+      "education": {
+        "title": "Centro Educativo",
+        "desc": "Desde colegio comunitario hasta medicina osteopática, Middletown alberga diversas instituciones de educación superior."
+      },
+      "revitalization": {
+        "title": "Revitalización del Centro",
+        "desc": "Inversión DRI de $10M transformando el centro con mejoras de paisaje urbano, infraestructura verde y renovación de fachadas."
+      },
+      "lifestyle": {
+        "title": "Estilo de Vida y Cultura",
+        "desc": "Vibrante gastronomía local, tiendas artesanales y eventos culturales que enriquecen la experiencia comunitaria."
+      },
+      "transportation": {
+        "title": "Transporte y Acceso",
+        "desc": "Conexiones ferroviarias, Heritage Trail y ubicación estratégica a 60 millas de NYC hacen a Middletown altamente accesible."
+      },
+      "technology": {
+        "title": "Tecnología e Innovación",
+        "desc": "La sede de Gan Jing World y la creciente presencia tecnológica posicionan a Middletown como un corredor tecnológico emergente."
+      }
+    }
+  },
   "pages": {
     "campus": {
       "title": "Campus DRI",
