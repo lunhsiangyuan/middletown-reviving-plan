@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/card";
 import { ReferenceLinks } from "@/components/reference-links";
 import { CTASection } from "@/components/sections/cta-section";
+import { MapSection } from "@/components/sections/map-section";
 import { resolveReferences } from "@/lib/data/references";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { content } from "./content";
@@ -174,6 +175,23 @@ export function TransportationClient() {
 
       {/* References */}
       <ReferenceLinks references={transportRefs} />
+
+      {/* Transportation Map */}
+      <MapSection
+        title={c.header.title}
+        description={c.header.desc}
+        badgeLabel={c.header.badge}
+        center={[41.446, -74.423]}
+        zoom={13}
+        markers={[
+          {
+            id: "middletown-center",
+            position: [41.446, -74.423],
+            title: "Middletown, NY",
+            description: "60 miles from NYC — Strategic location",
+          },
+        ]}
+      />
 
       {/* CTA */}
       <CTASection />

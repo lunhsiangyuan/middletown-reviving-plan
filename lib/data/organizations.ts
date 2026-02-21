@@ -593,7 +593,7 @@ const localizedOrganizations: LocalizedOrganization[] = [
       es: "Hospital comunitario de servicio completo que brinda servicios de atención médica integral al área de Middletown.",
     },
     sourceUrl: "https://garnethealth.org",
-    coordinates: { lat: 41.4478, lng: -74.4069 },
+    coordinates: { lat: 41.4427, lng: -74.3669 },
   },
 
   // ==================== EDUCATION ====================

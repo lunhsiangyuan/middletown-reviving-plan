@@ -37,8 +37,8 @@ export const topicLocations: TopicLocation[] = [
     color: "text-emerald-600",
     bgColor: "bg-emerald-50",
     href: "/healthcare",
-    center: [41.447, -74.415],
-    zoom: 15,
+    center: [41.445, -74.395],
+    zoom: 13,
     markerIds: ["northern-medical-center", "garnet-health"],
   },
   {
@@ -114,7 +114,7 @@ export const allMarkers: MapMarker[] = [
   },
   {
     id: "garnet-health",
-    position: [41.4478, -74.4069],
+    position: [41.4427, -74.3669],
     title: "Garnet Health Medical Center",
     description: "Full-service community hospital",
   },

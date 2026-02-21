@@ -29,6 +29,7 @@ import {
 import { OrgCard } from "@/components/cards/org-card";
 import { ReferenceLinks } from "@/components/reference-links";
 import { CTASection } from "@/components/sections/cta-section";
+import { MapSection } from "@/components/sections/map-section";
 import {
   resolveOrganizations,
   isHealthcareInfo,
@@ -405,6 +406,35 @@ export function HealthcareClient() {
 
       {/* References */}
       <ReferenceLinks references={healthcareRefs} />
+
+      {/* Healthcare Map */}
+      <MapSection
+        title={c.header.title}
+        description={nmc.address}
+        badgeLabel={c.header.badge}
+        center={[41.445, -74.395]}
+        zoom={13}
+        markers={[
+          {
+            id: "northern-medical-center",
+            position: [41.4459, -74.4229],
+            title: nmc.name,
+            description: nmc.address,
+          },
+          {
+            id: "garnet-health",
+            position: [41.4427, -74.3669],
+            title: garnet.name,
+            description: garnet.address,
+          },
+          {
+            id: "touro-com",
+            position: [41.4467, -74.4187],
+            title: touro.name,
+            description: touro.address,
+          },
+        ]}
+      />
 
       {/* CTA */}
       <CTASection />

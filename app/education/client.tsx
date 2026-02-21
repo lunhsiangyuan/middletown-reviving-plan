@@ -27,6 +27,7 @@ import {
 import { OrgCard } from "@/components/cards/org-card";
 import { ReferenceLinks } from "@/components/reference-links";
 import { CTASection } from "@/components/sections/cta-section";
+import { MapSection } from "@/components/sections/map-section";
 import {
   resolveOrganizations,
   isEducationInfo,
@@ -456,6 +457,41 @@ export function EducationClient() {
 
       {/* References */}
       <ReferenceLinks references={educationRefs} />
+
+      {/* Education Map */}
+      <MapSection
+        title={c.header.title}
+        description={northernAcademy.address}
+        badgeLabel={c.header.badge}
+        center={[41.447, -74.425]}
+        zoom={14}
+        markers={[
+          {
+            id: "northern-academy",
+            position: [41.4451, -74.4265],
+            title: northernAcademy.name,
+            description: northernAcademy.address,
+          },
+          {
+            id: "fei-tian-college",
+            position: [41.4462, -74.4235],
+            title: feiTianCollege.name,
+            description: feiTianCollege.address,
+          },
+          {
+            id: "touro-com",
+            position: [41.4467, -74.4187],
+            title: touro.name,
+            description: touro.address,
+          },
+          {
+            id: "suny-orange",
+            position: [41.4413, -74.4244],
+            title: sunyOrange.name,
+            description: sunyOrange.address,
+          },
+        ]}
+      />
 
       {/* CTA */}
       <CTASection />

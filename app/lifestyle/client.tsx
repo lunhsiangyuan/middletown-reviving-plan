@@ -17,6 +17,7 @@ import { BusinessCard } from "@/components/cards/business-card";
 import { OrgCard } from "@/components/cards/org-card";
 import { ReferenceLinks } from "@/components/reference-links";
 import { CTASection } from "@/components/sections/cta-section";
+import { MapSection } from "@/components/sections/map-section";
 import { resolveBusinesses } from "@/lib/data/businesses";
 import { resolveOrganizations } from "@/lib/data/organizations";
 import { resolveReferences } from "@/lib/data/references";
@@ -171,6 +172,29 @@ export function LifestyleClient() {
 
       {/* References */}
       <ReferenceLinks references={lifestyleRefs} />
+
+      {/* Lifestyle Map */}
+      <MapSection
+        title={c.header.title}
+        description={c.header.desc}
+        badgeLabel={c.header.badge}
+        center={[41.445, -74.42]}
+        zoom={15}
+        markers={[
+          {
+            id: "downtown",
+            position: [41.445, -74.42],
+            title: "Downtown & North Street",
+            description: "Restaurants, shops & cultural venues",
+          },
+          {
+            id: "gan-jing-world",
+            position: [41.446, -74.422],
+            title: "Gan Jing World",
+            description: "Technology & media HQ",
+          },
+        ]}
+      />
 
       {/* CTA */}
       <CTASection />

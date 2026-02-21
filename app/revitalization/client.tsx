@@ -207,24 +207,24 @@ export function RevitalizationClient() {
 
       {/* Revitalization Map */}
       <MapSection
-        title="Downtown & North Street"
-        description="Key locations for the $10M Downtown Revitalization Initiative and North Street Revival."
-        badgeLabel="Location"
-        center={[41.4450, -74.4200]}
+        title={c.header.title}
+        description={c.header.desc}
+        badgeLabel={c.header.badge}
+        center={[41.445, -74.42]}
         zoom={16}
         markers={[
           {
             id: "north-street",
-            position: [41.4450, -74.4200],
-            title: "North Street Revival",
-            description: "Historic commercial corridor"
+            position: [41.445, -74.42],
+            title: c.northStreet.title,
+            description: c.northStreet.desc,
           },
           {
             id: "heritage-trail",
-            position: [41.4410, -74.4180],
-            title: "Heritage Trail",
-            description: "Connecting the city to the region"
-          }
+            position: [41.441, -74.418],
+            title: c.heritage.title,
+            description: c.heritage.desc,
+          },
         ]}
       />
 
