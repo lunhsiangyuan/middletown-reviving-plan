@@ -15,6 +15,10 @@ const slogans = {
     line3: "偉大文明與文藝復興的再現",
     cta1: "探索計畫",
     cta2: "找到你的角色",
+    stat1: "總投資額",
+    stat2: "英畝開發面積",
+    stat3: "受惠人口",
+    stat4: "就業機會",
   },
   en: {
     eyebrow: "OFFICIAL PROPOSAL · NYS ESD 2026",
@@ -25,6 +29,10 @@ const slogans = {
     line3: "The Renaissance of Great Civilization",
     cta1: "Explore the Plan",
     cta2: "Find Your Role",
+    stat1: "Total Investment",
+    stat2: "Acres",
+    stat3: "Population",
+    stat4: "Jobs Created",
   },
   es: {
     eyebrow: "PROPUESTA OFICIAL · NYS ESD 2026",
@@ -35,6 +43,10 @@ const slogans = {
     line3: "El Renacimiento de una Gran Civilización",
     cta1: "Explorar el Plan",
     cta2: "Encuentra Tu Rol",
+    stat1: "Inversión Total",
+    stat2: "Acres",
+    stat3: "Población",
+    stat4: "Empleos Creados",
   },
 };
 
@@ -84,19 +96,19 @@ export function Hero() {
         <div className="mx-auto mb-8 max-w-3xl bg-slate-800/60 backdrop-blur-sm border border-orange-600/30 px-6 py-4 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
           <div>
             <div className="text-2xl font-mono font-bold tabular-nums text-orange-400">$234M</div>
-            <div className="text-xs text-slate-400 tracking-wide">總投資額</div>
+            <div className="text-xs text-slate-400 tracking-wide">{s.stat1}</div>
           </div>
           <div>
             <div className="text-2xl font-mono font-bold tabular-nums text-orange-400">270</div>
-            <div className="text-xs text-slate-400 tracking-wide">英畝開發面積</div>
+            <div className="text-xs text-slate-400 tracking-wide">{s.stat2}</div>
           </div>
           <div>
             <div className="text-2xl font-mono font-bold tabular-nums text-orange-400">30,345</div>
-            <div className="text-xs text-slate-400 tracking-wide">受惠人口</div>
+            <div className="text-xs text-slate-400 tracking-wide">{s.stat3}</div>
           </div>
           <div>
             <div className="text-2xl font-mono font-bold tabular-nums text-emerald-400">2,847</div>
-            <div className="text-xs text-slate-400 tracking-wide">就業機會</div>
+            <div className="text-xs text-slate-400 tracking-wide">{s.stat4}</div>
           </div>
         </div>
 

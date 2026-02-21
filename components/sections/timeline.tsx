@@ -30,11 +30,12 @@ interface TimelineProps {
   title?: string;
   categoryLabels?: Record<string, string>;
   horizontal?: boolean;
+  todayLabel?: string;
 }
 
 const CURRENT_YEAR = 2026;
 
-export function Timeline({ events, title = "Timeline", categoryLabels, horizontal = false }: TimelineProps) {
+export function Timeline({ events, title = "Timeline", categoryLabels, horizontal = false, todayLabel }: TimelineProps) {
   if (horizontal) {
     return (
       <section className="py-20 bg-slate-50 border-t border-slate-200">
@@ -42,7 +43,7 @@ export function Timeline({ events, title = "Timeline", categoryLabels, horizonta
           <div className="mb-8 flex items-center gap-3">
             <div className="h-6 w-1 bg-orange-600" />
             <span className="text-sm font-mono uppercase tracking-widest text-slate-500">
-              振興時間軸
+              TIMELINE
             </span>
           </div>
           <h2 className="mb-10 text-center text-3xl font-bold text-slate-900" style={{ fontFamily: 'var(--font-noto-serif-tc)' }}>
@@ -72,7 +73,7 @@ export function Timeline({ events, title = "Timeline", categoryLabels, horizonta
                       <div className="text-sm font-medium text-slate-800 leading-snug">{event.title}</div>
                       {isToday && (
                         <span className="inline-block mt-1 bg-orange-600 text-white text-xs px-2 py-0.5">
-                          ← 今日
+                          {todayLabel || "← Today"}
                         </span>
                       )}
                       <div className="mt-1">

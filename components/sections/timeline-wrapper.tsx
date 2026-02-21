@@ -20,12 +20,19 @@ export function TimelineWrapper({ horizontal = false }: TimelineWrapperProps) {
     ])
   );
 
+  const todayLabelMap: Record<string, string> = {
+    "zh-TW": "← 今日",
+    en: "← Today",
+    es: "← Hoy",
+  };
+
   return (
     <Timeline
       events={events}
       title={t("home.timeline")}
       categoryLabels={translatedCategoryLabels}
       horizontal={horizontal}
+      todayLabel={todayLabelMap[language] ?? todayLabelMap.en}
     />
   );
 }
