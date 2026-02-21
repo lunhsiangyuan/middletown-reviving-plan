@@ -7,7 +7,7 @@ import { useLanguage } from "@/lib/i18n/language-context";
 
 const slogans = {
   "zh-TW": {
-    eyebrow: "OFFICIAL PROPOSAL · NYS ESD 2026",
+    eyebrow: "MIDDLETOWN REVIVING PLAN · 2026",
     title: "Reviving",
     highlight: "Middletown",
     line1: "當科技遇上人性",
@@ -21,7 +21,7 @@ const slogans = {
     stat4: "就業機會",
   },
   en: {
-    eyebrow: "OFFICIAL PROPOSAL · NYS ESD 2026",
+    eyebrow: "MIDDLETOWN REVIVING PLAN · 2026",
     title: "Reviving",
     highlight: "Middletown",
     line1: "Where Technology Meets Humanity",
@@ -35,7 +35,7 @@ const slogans = {
     stat4: "Jobs Created",
   },
   es: {
-    eyebrow: "PROPUESTA OFICIAL · NYS ESD 2026",
+    eyebrow: "MIDDLETOWN REVIVING PLAN · 2026",
     title: "Reviviendo",
     highlight: "Middletown",
     line1: "Donde la Tecnología Encuentra la Humanidad",
