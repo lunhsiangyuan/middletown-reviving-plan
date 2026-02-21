@@ -42,7 +42,7 @@ export function Timeline({ events, title = "Timeline", categoryLabels, horizonta
           <div className="mb-8 flex items-center gap-3">
             <div className="h-6 w-1 bg-orange-600" />
             <span className="text-sm font-mono uppercase tracking-widest text-slate-500">
-              Revitalization Timeline
+              振興時間軸
             </span>
           </div>
           <h2 className="mb-10 text-center text-3xl font-bold text-slate-900" style={{ fontFamily: 'var(--font-noto-serif-tc)' }}>

@@ -50,7 +50,7 @@ export default function Home() {
         <span className="text-amber-400">◆</span>
       </div>
 
-      {/* Interactive Map — Scroll-Driven Explorer */}
+      {/* Scroll-Driven Explorer */}
       <ScrollMapExplorer />
 
       {/* Decorative divider */}

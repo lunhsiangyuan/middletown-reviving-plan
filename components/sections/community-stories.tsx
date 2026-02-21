@@ -5,15 +5,15 @@ import { useState, useEffect } from 'react'
 const stories = [
   {
     name: "Emily Zhang",
-    role: "飛天大學大三學生，藝術與科技雙主修",
-    quote: "在飛天大學，我們同時學習古典藝術和現代科技。Middletown 復甦計畫讓校園周邊有了更多實習和就業機會，我的同學們畢業後不用離開這個社區了。",
+    role: "在地大學大三學生，藝術與科技雙主修",
+    quote: "在大學裡，我們同時學習古典藝術和現代科技。復甦計畫讓校園周邊有了更多實習和就業機會，我的同學們畢業後不用離開這個社區了。",
     impact: "校區周邊新增 120+ 實習崗位",
     image: "👩🏻‍🎓",
     tag: "教育發展"
   },
   {
     name: "Carlos Rivera",
-    role: "在地餐廳 El Sabor 業主，Middletown 居民 15 年",
+    role: "在地餐廳業主，Middletown 居民 15 年",
     quote: "復甦計畫帶來了新的住戶和遊客，我的餐廳從勉強維持變成每晚客滿。我甚至開了第二家分店，僱用了 8 位新員工。",
     impact: "月營業額增加 $18,000",
     image: "👨🏽‍🍳",
@@ -23,7 +23,7 @@ const stories = [
     name: "David Park",
     role: "前物流業員工，現任科技與媒體園區資料分析師",
     quote: "透過園區的職業轉型計畫，我在 38 歲從倉儲物流轉入資料分析領域。薪資翻倍之外，更重要的是我終於有了職業發展的方向。",
-    impact: "薪資提升 $52,000/年",
+    impact: "年薪提升 $52,000",
     image: "👨🏻‍💻",
     tag: "職業轉型"
   }
@@ -47,7 +47,7 @@ export function CommunityStories() {
         <div className="mb-8 flex items-center gap-3">
           <div className="h-6 w-1 bg-orange-600" />
           <span className="text-sm font-mono uppercase tracking-widest text-slate-500">
-            Community Impact Stories
+            社區影響力故事
           </span>
         </div>
         <div className="text-center mb-12">

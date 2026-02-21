@@ -34,7 +34,7 @@ export function StatsSection() {
         <div className="mb-8 flex items-center gap-3">
           <div className="h-6 w-1 bg-orange-600" />
           <span className="text-sm font-mono uppercase tracking-widest text-slate-500">
-            Policy Metrics — Current vs. Target
+            政策指標 — 現況 vs. 目標
           </span>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
