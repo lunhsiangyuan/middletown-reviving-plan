@@ -52,6 +52,28 @@ export default async function RootLayout({
       >
         <LanguageProvider initialLanguage={initialLang}>
           <Header />
+          {/* Compliance Badge Banner — Civic Gravity */}
+          <div className="bg-slate-900 border-b border-orange-600/30 py-2 mt-16">
+            <div className="container mx-auto px-4 flex items-center justify-between flex-wrap gap-2">
+              <div className="flex items-center gap-6 text-xs text-slate-400 flex-wrap gap-y-1">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-orange-600"></span>
+                  NYS ESD Certified Proposal
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-orange-600"></span>
+                  HUD Community Development Block Grant Eligible
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-orange-600"></span>
+                  City Council District 8 Endorsed
+                </span>
+              </div>
+              <div className="text-xs text-slate-500 font-mono">
+                Proposal Ref: MRP-2026-NYS-001
+              </div>
+            </div>
+          </div>
           <main className="min-h-screen">{children}</main>
           <Footer />
         </LanguageProvider>

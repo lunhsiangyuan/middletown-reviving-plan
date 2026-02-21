@@ -177,3 +177,15 @@ html {
     font-family: var(--font-inter), var(--font-noto-sans-tc), "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", ui-sans-serif, system-ui, sans-serif;
   }
 }
+
+/* === Team Atlas: Civic Gravity Theme === */
+.theme-civic {
+  --primary: 15 23 42;        /* slate-900 */
+  --primary-foreground: 255 255 255;
+  --accent: 234 88 12;        /* orange-600 */
+  --accent-foreground: 255 255 255;
+  --background: 248 250 252;  /* slate-50 */
+  --card: 255 255 255;
+  --border: 226 232 240;      /* slate-200 */
+  --muted: 100 116 139;       /* slate-500 */
+}
